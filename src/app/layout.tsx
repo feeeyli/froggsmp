@@ -5,24 +5,19 @@ import { Noto_Sans as FontSans, Pixelify_Sans } from "next/font/google";
 import fontLocal from "next/font/local";
 import "../styles/globals.css";
 
-export const fontSans = FontSans({
+const fontSans = FontSans({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
   variable: "--font-sans",
 });
 
-export const fontMinecraft = fontLocal({
-  src: "../assets/minecraft.ttf",
-  variable: "--font-minecraft",
-});
-
-export const fontPixel = Pixelify_Sans({
+const fontPixel = Pixelify_Sans({
   subsets: ["latin"],
   weight: ["400", "600"],
   variable: "--font-pixel",
 });
 
-export const fontPixel2 = fontLocal({
+const fontPixel2 = fontLocal({
   src: "../assets/pixel2.ttf",
   variable: "--font-pixel2",
 });
