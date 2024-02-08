@@ -1,4 +1,5 @@
 import { StreamSchema } from "@/types/stream.schema";
+import { NextResponse } from "next/server";
 
 const STREAMERS = [
   "scottonauta",
@@ -151,5 +152,5 @@ async function getStreams() {
 export async function GET() {
   const parsedStreamers = await getStreams();
 
-  return Response.json(parsedStreamers);
+  return NextResponse.json(parsedStreamers);
 }
