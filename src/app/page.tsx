@@ -12,7 +12,7 @@ import Link from "next/link";
 
 export default async function Home() {
   const streams: StreamSchema[] = await fetch(
-    "http://localhost:3000/api/streams",
+    process.env.NEXT_PUBLIC_BASE_API_URL + "/api/streams",
     {
       next: { revalidate: 30 },
     }

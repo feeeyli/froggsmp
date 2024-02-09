@@ -3,6 +3,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   Pagination,
   PaginationContent,
@@ -45,15 +46,22 @@ const eventsEmojis = {
   "O Julgamento": "⚖️",
 } as const;
 
-function DateTime(props: DayContentProps & { vods: VodSchema[] }) {
+function DateTime(
+  props: DayContentProps & { vods: VodSchema[]; showServerDay: boolean }
+) {
   const dateTime = format(props.date, "yyyy-MM-dd");
-  const { event } =
+  const { event, server_day } =
     props.vods.find((vod) => vod.day === format(props.date, "dd/MM")) ?? {};
 
   return (
     <time dateTime={dateTime}>
       {event && eventsEmojis[event as keyof typeof eventsEmojis]}
-      {!event && <DayContent {...props} />}
+      {!event && (
+        <>
+          {!props.showServerDay && <DayContent {...props} />}
+          {props.showServerDay && (server_day ?? "")}
+        </>
+      )}
     </time>
   );
 }
@@ -84,6 +92,7 @@ export function VodSelector(props: VodSelectorProps) {
   );
 
   const [vodNumber, setVodNumber] = useState(0);
+  const [showServerDay, setShowServerDay] = useState(false);
 
   useEffect(() => {
     setVodNumber(0);
@@ -101,7 +110,7 @@ export function VodSelector(props: VodSelectorProps) {
 
   return (
     <div className="flex flex-col items-center sm:items-start sm:grid grid-cols-[auto_1fr]">
-      <div>
+      <div className="flex flex-col items-center gap-4">
         <Calendar
           mode="single"
           selected={day}
@@ -125,12 +134,28 @@ export function VodSelector(props: VodSelectorProps) {
             );
           }}
           components={{
-            DayContent: (p) => DateTime({ ...p, vods: props.vods }),
+            DayContent: (p) =>
+              DateTime({ ...p, vods: props.vods, showServerDay }),
           }}
           className="rounded-md border"
           month={month}
           onMonthChange={setMonth}
         />
+        <div className="flex items-center space-x-2">
+          <Checkbox
+            id="show-server-day"
+            checked={showServerDay}
+            onCheckedChange={(checked) =>
+              checked !== "indeterminate" && setShowServerDay(checked)
+            }
+          />
+          <label
+            htmlFor="show-server-day"
+            className="text-sm font-medium leading-none cursor-pointer peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          >
+            Mostrar dias do servidor
+          </label>
+        </div>
       </div>
       {selectedDay && (
         <div className="flex flex-col items-center gap-4 p-4 relative">
