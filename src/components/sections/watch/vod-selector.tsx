@@ -109,7 +109,7 @@ export function VodSelector(props: VodSelectorProps) {
   );
 
   return (
-    <div className="flex flex-col items-center sm:items-start sm:grid grid-cols-[auto_1fr]">
+    <div className="flex flex-col items-center sm:items-start sm:grid gap-4 grid-cols-[auto_1fr]">
       <div className="flex flex-col items-center gap-4">
         <Calendar
           mode="single"
@@ -158,7 +158,7 @@ export function VodSelector(props: VodSelectorProps) {
         </div>
       </div>
       {selectedDay && (
-        <div className="flex flex-col items-center gap-4 p-4 relative">
+        <div className="flex flex-col items-center w-full gap-4 py-4 relative">
           {vod && (
             <Button
               variant="ghost"
@@ -244,7 +244,7 @@ export function VodSelector(props: VodSelectorProps) {
         </div>
       )}
       {!selectedDay && (
-        <div className="flex items-center justify-center p-4">
+        <div className="flex items-center justify-center w-full py-4">
           <p className="text-lg text-center">Nenhum dia selecionado</p>
         </div>
       )}

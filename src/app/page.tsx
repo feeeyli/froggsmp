@@ -13,6 +13,12 @@ import Link from "next/link";
 export default async function Home() {
   const streams: StreamSchema[] = [];
 
+  console.log(
+    await fetch(process.env.NEXT_PUBLIC_BASE_API_URL + "/api/streams", {
+      next: { revalidate: 30 },
+    }).then((res) => res.json())
+  );
+
   const events = await getEvents();
   const updates = await getUpdates();
   const vods = await getVods();
