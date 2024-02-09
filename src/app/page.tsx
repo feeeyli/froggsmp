@@ -11,12 +11,7 @@ import { StreamSchema } from "@/types/stream.schema";
 import Link from "next/link";
 
 export default async function Home() {
-  const streams: StreamSchema[] = await fetch(
-    process.env.NEXT_PUBLIC_BASE_API_URL + "/api/streams",
-    {
-      next: { revalidate: 30 },
-    }
-  ).then((res) => res.json());
+  const streams: StreamSchema[] = [];
 
   const events = await getEvents();
   const updates = await getUpdates();
