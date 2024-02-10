@@ -8,6 +8,7 @@ import { CarouselItem } from "../../ui/carousel";
 
 type StreamProps = {
   stream: StreamSchema;
+  autoplay: boolean;
 };
 
 export function Stream(props: StreamProps) {
@@ -17,6 +18,8 @@ export function Stream(props: StreamProps) {
         <div className="aspect-video bg-primary flex-grow">
           <TwitchPlayerNonInteractive
             channel={props.stream.login}
+            autoplay={props.autoplay}
+            muted
             className="h-full w-full"
           />
         </div>

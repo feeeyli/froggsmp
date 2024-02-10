@@ -34,8 +34,8 @@ export function Streams(props: StreamsProps) {
       <Carousel>
         <CarouselContent>
           {props.streams.length > 0 &&
-            props.streams.map((stream) => (
-              <Stream stream={stream} key={stream.login} />
+            props.streams.map((stream, i) => (
+              <Stream stream={stream} autoplay={i === 0} key={stream.login} />
             ))}
           {props.streams.length === 0 && <NoStreams />}
         </CarouselContent>

@@ -181,34 +181,39 @@ export function VodSelector(props: VodSelectorProps) {
             )}
           </p>
           {!vod && (
-            <ul className="flex flex-wrap max-w-md justify-center gap-2">
-              {Object.entries(selectedDay.vods).map(([key, value]) => {
-                const streamer = getStreamer(key);
+            <>
+              <ul className="flex flex-wrap max-w-md justify-center gap-2">
+                {Object.entries(selectedDay.vods).map(([key, value]) => {
+                  const streamer = getStreamer(key);
 
-                if (!streamer) return null;
+                  if (!streamer) return null;
 
-                return (
-                  <li key={key} className="flex">
-                    <Button
-                      variant="link"
-                      size="sm"
-                      className="h-auto flex-col text-foreground gap-1 py-2 px-2"
-                      onClick={() => setVod(key)}
-                    >
-                      <img
-                        src={`https://s.namemc.com/2d/skin/face.png?id=${streamer.skin_id}&scale=32`}
-                        alt={`Skin de ${streamer.display_name}`}
-                        style={{
-                          imageRendering: "pixelated",
-                        }}
-                        className="h-10 w-10"
-                      />
-                      <span>{streamer.display_name}</span>
-                    </Button>
-                  </li>
-                );
-              })}
-            </ul>
+                  return (
+                    <li key={key} className="flex">
+                      <Button
+                        variant="link"
+                        size="sm"
+                        className="h-auto flex-col text-foreground gap-1 py-2 px-2"
+                        onClick={() => setVod(key)}
+                      >
+                        <img
+                          src={`https://s.namemc.com/2d/skin/face.png?id=${streamer.skin_id}&scale=32`}
+                          alt={`Skin de ${streamer.display_name}`}
+                          style={{
+                            imageRendering: "pixelated",
+                          }}
+                          className="h-10 w-10"
+                        />
+                        <span>{streamer.display_name}</span>
+                      </Button>
+                    </li>
+                  );
+                })}
+              </ul>
+              <p className="text-sm opacity-80">
+                Clique em um streamer para assistir ao VOD
+              </p>
+            </>
           )}
           {vod && selectedDay.vods[vod as keyof typeof selectedDay.vods] && (
             <>
