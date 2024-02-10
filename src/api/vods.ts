@@ -15,7 +15,7 @@ export async function getVods() {
         }
         `,
     }),
-    next: { revalidate: 60 * 60 * 12 },
+    next: { revalidate: 60 * 5 },
   });
   const json = await response.json();
 
