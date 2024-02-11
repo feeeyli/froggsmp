@@ -34,7 +34,7 @@ export function Streams(props: StreamsProps) {
       <Carousel>
         <CarouselContent>
           {props.streams.length > 0 &&
-            props.streams.map((stream, i) => (
+            props.streams.sort((a,b) => new Date(b.started_at).getTime() - new Date(a.started_at).getTime()).map((stream, i) => (
               <Stream stream={stream} autoplay={i === 0} key={stream.login} />
             ))}
           {props.streams.length === 0 && <NoStreams />}
