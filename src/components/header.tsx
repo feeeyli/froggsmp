@@ -41,6 +41,11 @@ export function Header() {
             </li>
             <li>
               <Button size="sm" variant="link" asChild>
+                <Link href="#correio">Correio Froggiano</Link>
+              </Button>
+            </li>
+            <li>
+              <Button size="sm" variant="link" asChild>
                 <Link href="#assistir">VODs</Link>
               </Button>
             </li>

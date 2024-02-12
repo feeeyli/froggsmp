@@ -134,7 +134,7 @@ export function Announcement(props: AnnouncementProps) {
           <>
             <Separator className="opacity-50" />
             <Link
-              className="text-sm text-center hover:underline text-primary"
+              className="text-sm text-center hover:underline text-primary font-pixel"
               target="_blank"
               href={props.announcement.link}
             >

@@ -4,22 +4,23 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { UpdateSchema } from "@/types/update.schema";
+import { NewspaperSchema } from "@/types/newspaper.schema";
 import Link from "next/link";
-import { Announcement } from "../events/announcement";
+import { Newspaper } from "./newspaper";
+import { PageDialog } from "./page-dialog";
 
-type UpdatesProps = {
-  updates: UpdateSchema[];
+type NewspapersProps = {
+  newspapers: NewspaperSchema[];
 };
 
-export function Updates(props: UpdatesProps) {
+export function Newspapers(props: NewspapersProps) {
   return (
-    <section className="py-8 px-4 sm:px-8 md:px-20 lg:px-40 flex flex-col gap-6">
+    <section className="py-8 px-4 sm:px-8 md:px-20 lg:px-40 flex flex-col gap-6 bg-secondary/10">
       <h2
         className="text-3xl font-semibold flex items-center gap-6 flex-wrap"
-        id="atualizacoes"
+        id="correio"
       >
-        Atualizações diárias{" "}
+        Correio Froggiano{" "}
         <Link
           href="https://twitter.com/froggsmpnots"
           target="_blank"
@@ -37,27 +38,14 @@ export function Updates(props: UpdatesProps) {
         }}
       >
         <CarouselContent>
-          {props.updates.map((up) => (
-            <Announcement
-              key={up.pictures[0]}
-              announcement={{
-                publisher: "FroggUpdates",
-                thread: true,
-                ...up,
-              }}
-            >
-              <span className="text-center block mb-2 text-lg">
-                {new Date(up.date + " 00:00:00").toLocaleString("pt-BR", {
-                  day: "numeric",
-                  month: "long",
-                })}
-              </span>
-            </Announcement>
+          {props.newspapers.map((up) => (
+            <Newspaper key={up.edition} newspaper={up} />
           ))}
         </CarouselContent>
         <CarouselNext className="-right-1 sm:right-4 disabled:hidden" />
         <CarouselPrevious className="-left-1 sm:left-4 disabled:hidden" />
       </Carousel>
+      <PageDialog newspapers={props.newspapers} />
     </section>
   );
 }

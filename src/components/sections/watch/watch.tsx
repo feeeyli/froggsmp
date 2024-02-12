@@ -7,7 +7,7 @@ type WatchProps = {
 
 export function Watch(props: WatchProps) {
   return (
-    <section className="py-8 px-4 sm:px-8 md:px-20 lg:px-40 flex flex-col gap-6 bg-secondary/10">
+    <section className="py-8 px-4 sm:px-8 md:px-20 lg:px-40 flex flex-col gap-6">
       <h2 className="text-3xl font-semibold" id="assistir">
         VODs
       </h2>

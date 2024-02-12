@@ -1,8 +1,10 @@
 import { getEvents } from "@/api/events";
+import { getNewspapers } from "@/api/newspapers";
 import { getUpdates } from "@/api/updates";
 import { getVods } from "@/api/vods";
 import { Header } from "@/components/header";
 import { Events } from "@/components/sections/events/events";
+import { Newspapers } from "@/components/sections/newspapers/newspapers";
 import { Streamers } from "@/components/sections/streamers/streamers";
 import { Streams } from "@/components/sections/streams/streams";
 import { Updates } from "@/components/sections/updates/updates";
@@ -21,6 +23,7 @@ export default async function Home() {
   const events = await getEvents();
   const updates = await getUpdates();
   const vods = await getVods();
+  const newspapers = await getNewspapers();
 
   return (
     <>
@@ -38,6 +41,7 @@ export default async function Home() {
             (x, y) => new Date(y.date).getTime() - new Date(x.date).getTime()
           )}
         />
+        <Newspapers newspapers={newspapers} />
         <Watch vods={vods} />
       </main>
       <footer className="px-8 md:px-20 lg:px-40 py-10 bg-foreground text-background flex flex-col gap-4">

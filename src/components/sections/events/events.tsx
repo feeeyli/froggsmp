@@ -6,13 +6,22 @@ import { Suspense } from "react";
 import { Event } from "./event";
 import { NextEventCountdown } from "./next-event-countdown";
 
+function addHours(date: Date, hours: number) {
+  const added = new Date(date);
+
+  added.setHours(added.getHours() + hours);
+
+  return added;
+}
+
 type EventsProps = {
   events: EventSchema[];
 };
 
 export function Events(props: EventsProps) {
   const hasFuture =
-    new Date().getTime() < new Date(props.events[0].time).getTime();
+    new Date().getTime() <
+    addHours(new Date(props.events[0].time), 2).getTime();
 
   return (
     <section className="py-8 px-4 sm:px-8 md:px-20 lg:px-40 flex flex-col gap-6 justify-center bg-secondary/10">
