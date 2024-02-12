@@ -20,7 +20,7 @@ import Markdown from "react-markdown";
 
 const charactersNames = {
   bastet: "bastet",
-  jinki: "jinki",
+  jinki: "jinkiwinkki",
   akino: "oakinoo",
   tiba: "tiba041",
   ameizim: "ameizim",
