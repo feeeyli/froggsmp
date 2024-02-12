@@ -3,6 +3,7 @@ import { CarouselItem } from "@/components/ui/carousel";
 import { Separator } from "@/components/ui/separator";
 import { NewspaperSchema } from "@/types/newspaper.schema";
 import Link from "next/link";
+import { Suspense } from "react";
 import Markdown from "react-markdown";
 import { Page } from "./page";
 import { PageTrigger } from "./page-trigger";
@@ -60,7 +61,9 @@ export function Newspaper(props: NewspaperProps) {
             {props.newspaper.pages.map((page, index) => (
               <Page key={page.picture} page={page} />
             ))}
-            <PageTrigger day={props.newspaper.day} />
+            <Suspense>
+              <PageTrigger day={props.newspaper.day} />
+            </Suspense>
           </section>
         )}
         <p className="text-sm text-center opacity-80">

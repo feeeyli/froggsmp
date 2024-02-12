@@ -6,6 +6,7 @@ import {
 } from "@/components/ui/carousel";
 import { NewspaperSchema } from "@/types/newspaper.schema";
 import Link from "next/link";
+import { Suspense } from "react";
 import { Newspaper } from "./newspaper";
 import { PageDialog } from "./page-dialog";
 
@@ -45,7 +46,9 @@ export function Newspapers(props: NewspapersProps) {
         <CarouselNext className="-right-1 sm:right-4 disabled:hidden" />
         <CarouselPrevious className="-left-1 sm:left-4 disabled:hidden" />
       </Carousel>
-      <PageDialog newspapers={props.newspapers} />
+      <Suspense>
+        <PageDialog newspapers={props.newspapers} />
+      </Suspense>
     </section>
   );
 }
