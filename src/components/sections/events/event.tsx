@@ -18,23 +18,25 @@ type EventProps = {
 };
 
 export function Event(props: EventProps) {
+  const time = props.event.time.replace("+00:00", "+03:00");
+
   return (
     <TabsContent value={props.event.slug} className="py-4">
       <header className="flex flex-col items-center">
         <h3 className="text-2xl font-semibold">{props.event.name}</h3>
         <p className="text-lg relative text-primary before:bg-background before:px-4 before:absolute before:-inset-x-6 before:bottom-0 before:top-[40%] z-10 before:-z-10">
           {capitalizeFirstLetter(
-            new Date(props.event.time).toLocaleString("pt-BR", {
+            new Date(time).toLocaleString("pt-BR", {
               weekday: "long",
             })
           )}
           {", "}
-          {new Date(props.event.time).toLocaleString("pt-BR", {
+          {new Date(time).toLocaleString("pt-BR", {
             day: "numeric",
             month: "numeric",
           })}
           {" - "}
-          {new Date(props.event.time).toLocaleString("pt-BR", {
+          {new Date(time).toLocaleString("pt-BR", {
             hour: "numeric",
             minute: "numeric",
           })}
