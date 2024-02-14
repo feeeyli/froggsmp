@@ -23,43 +23,36 @@ function getStreamer(twitch_login: string) {
   return STREAMERS.find((streamer) => streamer.twitch_login === twitch_login);
 }
 
-function gerarArray(numDias: number) {
-  const array = [];
-  let serverDay = 5;
-
-  for (let i = 1; i <= numDias; i++) {
-    const day = ("0" + i).slice(-2) + "/01";
-    const obj = {
-      day: day,
-      server_day: serverDay,
-      vods: {},
-    };
-    array.push(obj);
-    serverDay++;
-  }
-
-  return array;
-}
-
-const eventsEmojis = {
-  "Episódio de Praia / A Fuga": "🏖️",
-  "O Julgamento": "⚖️",
+const Events = {
+  julgamento: {
+    name: "Julgamento",
+    emoji: "⚖️",
+  },
+  "episodio-de-praia": {
+    name: "Episódio de Praia",
+    emoji: "🏖️",
+  },
+  "a-fuga": {
+    name: "A Fuga",
+    emoji: "⛓️",
+  },
 } as const;
 
 function DateTime(
   props: DayContentProps & { vods: VodSchema[]; showServerDay: boolean }
 ) {
   const dateTime = format(props.date, "yyyy-MM-dd");
-  const { event, server_day } =
-    props.vods.find((vod) => vod.day === format(props.date, "dd/MM")) ?? {};
+  const day = props.vods.find((vod) => {
+    return vod.day === props.date.toISOString().split("T")[0];
+  });
 
   return (
     <time dateTime={dateTime}>
-      {event && eventsEmojis[event as keyof typeof eventsEmojis]}
-      {!event && (
+      {day?.events[0] && Events[day.events[0] as keyof typeof Events].emoji}
+      {!day?.events[0] && (
         <>
           {!props.showServerDay && <DayContent {...props} />}
-          {props.showServerDay && (server_day ?? "")}
+          {props.showServerDay && (day?.server_day ?? "")}
         </>
       )}
     </time>
@@ -103,10 +96,12 @@ export function VodSelector(props: VodSelectorProps) {
   }, [day, setVod]);
 
   const selectedDay = props.vods.find(
-    (vod) =>
-      new Date(vod.day.split("/").reverse().join("-") + "-2024").getTime() ===
-      day?.getTime()
+    (vod) => vod.day === day?.toISOString().split("T")[0]
   );
+
+  const enabledDays = props.vods
+    .filter((vod) => vod.vods.length > 0)
+    .map((day) => day.day);
 
   return (
     <div className="flex flex-col items-center sm:items-start sm:grid gap-4 grid-cols-[auto_1fr]">
@@ -115,23 +110,10 @@ export function VodSelector(props: VodSelectorProps) {
           mode="single"
           selected={day}
           onSelect={setDay}
-          fromMonth={new Date(2024, 0)}
-          toDate={
-            new Date(
-              props.vods[props.vods.length - 1].day
-                .split("/")
-                .reverse()
-                .join("-") + "-2024"
-            )
-          }
+          fromDate={new Date(props.vods[0].day)}
+          toMonth={new Date(props.vods[props.vods.length - 1].day)}
           disabled={(day) => {
-            return !props.vods.some(
-              (vod) =>
-                new Date(
-                  vod.day.split("/").reverse().join("-") + "-2024 00:00"
-                ).getTime() === day.getTime() &&
-                Object.keys(vod.vods).length > 0
-            );
+            return !enabledDays.includes(day.toISOString().split("T")[0]);
           }}
           components={{
             DayContent: (p) =>
@@ -170,12 +152,18 @@ export function VodSelector(props: VodSelectorProps) {
             </Button>
           )}
           <p className="text-lg text-center">
-            Dia {selectedDay.server_day} - {selectedDay.day}
-            {selectedDay.event && (
+            Dia {selectedDay.server_day} -{" "}
+            {new Date(selectedDay.day + " 00:00").toLocaleString("pt-BR", {
+              day: "numeric",
+              month: "numeric",
+            })}
+            {selectedDay.events.length > 0 && (
               <>
                 <br />
-                <span className="relative text-primary before:bg-background before:px-4 before:absolute before:-inset-x-6 before:bottom-0 before:top-[40%] z-10 before:-z-10">
-                  {selectedDay.event}
+                <span className="relative text-primary before:bg-primary/5 before:px-4 before:absolute before:-inset-x-6 before:bottom-0 before:top-[50%] z-10 before:-z-10">
+                  {selectedDay.events
+                    .map((event) => Events[event as keyof typeof Events].name)
+                    .join(" / ")}
                 </span>
               </>
             )}
@@ -183,18 +171,18 @@ export function VodSelector(props: VodSelectorProps) {
           {!vod && (
             <>
               <ul className="flex flex-wrap max-w-md justify-center gap-2">
-                {Object.entries(selectedDay.vods).map(([key, value]) => {
-                  const streamer = getStreamer(key);
+                {selectedDay.vods.map((vod) => {
+                  const streamer = getStreamer(vod.streamer);
 
                   if (!streamer) return null;
 
                   return (
-                    <li key={key} className="flex">
+                    <li key={vod.streamer} className="flex">
                       <Button
                         variant="link"
                         size="sm"
                         className="h-auto flex-col text-foreground gap-1 py-2 px-2"
-                        onClick={() => setVod(key)}
+                        onClick={() => setVod(vod.streamer)}
                       >
                         <img
                           src={`https://s.namemc.com/2d/skin/face.png?id=${streamer.skin_id}&scale=32`}
@@ -215,21 +203,20 @@ export function VodSelector(props: VodSelectorProps) {
               </p>
             </>
           )}
-          {vod && selectedDay.vods[vod as keyof typeof selectedDay.vods] && (
+          {vod && selectedDay.vods.find((v) => v.streamer === vod)?.vods && (
             <>
               <VodPlayer
-                vod={
-                  selectedDay.vods[vod as keyof typeof selectedDay.vods][
-                    vodNumber
-                  ]
-                }
+                vod={selectedDay.vods
+                  .find((v) => v.streamer === vod)!
+                  .vods[vodNumber].replace("https://www.twitch.tv/videos/", "")}
               />
-              {selectedDay.vods[vod as keyof typeof selectedDay.vods].length >
+              {selectedDay.vods.find((v) => v.streamer === vod)!.vods.length >
                 1 && (
                 <Pagination>
                   <PaginationContent>
-                    {selectedDay.vods[vod as keyof typeof selectedDay.vods].map(
-                      (v, i) => (
+                    {selectedDay.vods
+                      .find((v) => v.streamer === vod)!
+                      .vods.map((v, i) => (
                         <PaginationItem key={v}>
                           <PaginationLink
                             onClick={() => setVodNumber(i)}
@@ -239,8 +226,7 @@ export function VodSelector(props: VodSelectorProps) {
                             Parte {i + 1}
                           </PaginationLink>
                         </PaginationItem>
-                      )
-                    )}
+                      ))}
                   </PaginationContent>
                 </Pagination>
               )}
@@ -253,6 +239,7 @@ export function VodSelector(props: VodSelectorProps) {
           <p className="text-lg text-center">Nenhum dia selecionado</p>
         </div>
       )}
+      {vod}
     </div>
   );
 }
