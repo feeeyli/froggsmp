@@ -36,6 +36,10 @@ const Events = {
     name: "A Fuga",
     emoji: "⛓️",
   },
+  "valentines-day": {
+    name: "Valentine's Day",
+    emoji: "💘",
+  },
 } as const;
 
 function DateTime(
