@@ -9,7 +9,7 @@ export async function getUpdates() {
     body: JSON.stringify({
       query: `
         query Updates {
-          updates {
+          updates(last: 1000) {
             link
             text
             date
