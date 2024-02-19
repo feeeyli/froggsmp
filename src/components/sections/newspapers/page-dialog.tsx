@@ -27,7 +27,13 @@ const charactersNames = {
   scott: "scottonauta",
   rafly: "imrafly",
   pierre: "umildlive",
+  umild: "umildlive",
   kojj: "kojjlul",
+  yumi: "participantes",
+  áries: "fehdubs",
+  flopi: "flopi",
+  carras: "carrasquera",
+  ljoga: "ljoga"
 };
 
 const transcriptVariants = cva(
