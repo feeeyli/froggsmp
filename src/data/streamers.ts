@@ -270,9 +270,9 @@ export const STREAMERS: StreamerSchema[] = [
   {
     display_name: "Yumithra",
     avatar_url:
-      "https://pbs.twimg.com/profile_images/1529186482266710017/gM0wwYCr_400x400.jpg",
+      "https://static-cdn.jtvnw.net/jtv_user_pictures/634e48a5-bcbb-408e-81ba-b2b7666931f5-profile_image-300x300.png",
     skin_id: "64709e7714be9f34",
-    twitch_login: null,
+    twitch_login: "yuyusaz",
     twitter_login: "YuyuSaz",
     youtube_login: null,
     characters: [
