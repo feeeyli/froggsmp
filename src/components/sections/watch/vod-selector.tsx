@@ -44,6 +44,10 @@ const Events = {
     name: "Zoologico Frogg",
     emoji: "🦒",
   },
+  "a-missa": {
+    name: "A Missa",
+    emoji: "🙏",
+  },
 } as const;
 
 function DateTime(
