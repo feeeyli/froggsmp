@@ -148,6 +148,21 @@ export const STREAMERS: StreamerSchema[] = [
     ],
   },
   {
+    display_name: "Febatista",
+    avatar_url:
+      "https://static-cdn.jtvnw.net/jtv_user_pictures/0129c7d8-8e76-4501-8bad-35e6c0d3c0f6-profile_image-300x300.png",
+    skin_id: "a141918f2aa18ebc",
+    twitch_login: "febatista",
+    twitter_login: "Febatista",
+    youtube_login: "Febatista",
+    characters: [
+      {
+        name: "Febatista",
+        wiki_url: "https://frogg-smp.fandom.com/pt-br/wiki/Febatista",
+      },
+    ],
+  },
+  {
     display_name: "FehDubs",
     avatar_url:
       "https://static-cdn.jtvnw.net/jtv_user_pictures/f2614f03-9849-478f-8110-ab9adf8a8531-profile_image-300x300.png",
