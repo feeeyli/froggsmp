@@ -23,17 +23,20 @@ const charactersNames = {
   jinki: "jinkiwinkki",
   akino: "oakinoo",
   tiba: "tiba041",
+  tibba: "tiba041",
   ameizim: "ameizim",
   scott: "scottonauta",
   rafly: "imrafly",
   pierre: "umildlive",
   umild: "umildlive",
   kojj: "kojjlul",
-  yumi: "participantes",
+  yumi: "yuyusaz",
   áries: "fehdubs",
   flopi: "flopi",
   carras: "carrasquera",
-  ljoga: "ljoga"
+  ljoga: "ljoga",
+  myn: "mynluvsx",
+  dr_rodrigo: "umildlive"
 };
 
 const transcriptVariants = cva(
@@ -106,6 +109,8 @@ export function PageDialog(props: PageDialogProps) {
                             charactersNames[
                               String(children)
                                 .split("!")[1]
+                                .replace(".", "")
+                                .replace(" ", "_")
                                 .toLocaleLowerCase() as keyof typeof charactersNames
                             ]
                           }`}
@@ -118,7 +123,7 @@ export function PageDialog(props: PageDialogProps) {
                     },
                   }}
                 >
-                  {page.transcript.replaceAll(/F!\w+/g, "*$&*")}
+                  {page.transcript.replaceAll(/F!(\w+\.\s\w+|\w+)/g, "*$&*")}
                 </Markdown>
                 <Toggle
                   // size="icon"
