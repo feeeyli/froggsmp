@@ -7,13 +7,13 @@ export const STREAMERS: StreamerSchema[] = [
     display_name: "Scottonauta",
     avatar_url:
       "https://static-cdn.jtvnw.net/jtv_user_pictures/1917209e-3c4e-49c2-8c09-e4e77141e1e1-profile_image-300x300.png",
-    skin_id: "56097d3643dc64f5",
+    skin_id: "d63e68c8b065ad0e",
     twitch_login: "scottonauta",
     twitter_login: "scottonauta",
     youtube_login: "Scortes",
     characters: [
       {
-        name: "Scottonauta",
+        name: "Abaddon",
         wiki_url: "https://frogg-smp.fandom.com/pt-br/wiki/Scottonauta",
       },
     ],
@@ -22,7 +22,7 @@ export const STREAMERS: StreamerSchema[] = [
     display_name: "Umild",
     avatar_url:
       "https://static-cdn.jtvnw.net/jtv_user_pictures/fa41da80-e980-4bb6-a580-bd6ea487b14f-profile_image-300x300.png",
-    skin_id: "a314e028cd6ea1bd",
+    skin_id: "c78e42c163a5d207",
     twitch_login: "umildlive",
     twitter_login: "UmildCDU",
     youtube_login: "umildlive",
@@ -117,7 +117,7 @@ export const STREAMERS: StreamerSchema[] = [
     display_name: "Carrasquera",
     avatar_url:
       "https://static-cdn.jtvnw.net/jtv_user_pictures/7b4253a0-eb8a-4f5e-8ea2-1b715c6c39b7-profile_image-300x300.png",
-    skin_id: "be4d799ec02c65b6",
+    skin_id: "54b8b4d94f4f5553",
     twitch_login: "carrasquera",
     twitter_login: "Carras_quera",
     youtube_login: "CarrasqueraLives",
@@ -177,7 +177,7 @@ export const STREAMERS: StreamerSchema[] = [
     display_name: "JinkiWinkki",
     avatar_url:
       "https://static-cdn.jtvnw.net/jtv_user_pictures/e08bd224-64d0-4f1f-8473-1ff7b1dcf195-profile_image-300x300.png",
-    skin_id: "0a300ede0136a613",
+    skin_id: "eae819549207fe2f",
     twitch_login: "jinkiwinkki",
     twitter_login: "jinkiwinkki",
     youtube_login: "livesdajinkiwinkki",
@@ -207,7 +207,7 @@ export const STREAMERS: StreamerSchema[] = [
     display_name: "Kojj",
     avatar_url:
       "https://static-cdn.jtvnw.net/jtv_user_pictures/031207fe-1ebb-4d1f-b406-27553e0ecb83-profile_image-300x300.png",
-    skin_id: "04109ede50dff026",
+    skin_id: "901fb0110e779637",
     twitch_login: "kojjlul",
     twitter_login: "Kojjlul",
     youtube_login: "ratariavods",
@@ -222,7 +222,7 @@ export const STREAMERS: StreamerSchema[] = [
     display_name: "LJoga",
     avatar_url:
       "https://static-cdn.jtvnw.net/jtv_user_pictures/5d465f44-69bf-4b06-b49f-b20944fe0bcf-profile_image-300x300.png",
-    skin_id: "8060c75162f7c77c",
+    skin_id: "e6d89714563a464a",
     twitch_login: "ljoga",
     twitter_login: "LJoga",
     youtube_login: "LJogaLives",
@@ -241,7 +241,7 @@ export const STREAMERS: StreamerSchema[] = [
     display_name: "Mynzinha",
     avatar_url:
       "https://static-cdn.jtvnw.net/jtv_user_pictures/7cee8027-2e00-4c58-924f-7bc30bf90e0c-profile_image-300x300.png",
-    skin_id: "cdb0dcfbac573a22",
+    skin_id: "e6be9fdcc7ed4386",
     twitch_login: "mynluvsx",
     twitter_login: "mynluvsx",
     youtube_login: "livesdamyn",
@@ -256,7 +256,7 @@ export const STREAMERS: StreamerSchema[] = [
     display_name: "Raflyer",
     avatar_url:
       "https://static-cdn.jtvnw.net/jtv_user_pictures/41d41923-67ac-4498-9df5-e4d38f46f96f-profile_image-300x300.png",
-    skin_id: "dc0e2bfcbc1064d0",
+    skin_id: "cf482f5e94b029a4",
     twitch_login: "imrafly",
     twitter_login: "imraflying",
     youtube_login: "livesdarafly",
@@ -271,7 +271,7 @@ export const STREAMERS: StreamerSchema[] = [
     display_name: "Yumithra",
     avatar_url:
       "https://static-cdn.jtvnw.net/jtv_user_pictures/634e48a5-bcbb-408e-81ba-b2b7666931f5-profile_image-300x300.png",
-    skin_id: "64709e7714be9f34",
+    skin_id: "79f550c79c2652b1",
     twitch_login: "yuyusaz",
     twitter_login: "YuyuSaz",
     youtube_login: null,
