@@ -48,6 +48,10 @@ const Events = {
     name: "A Missa",
     emoji: "🙏",
   },
+  "o-milagre": {
+    name: "O Milagre",
+    emoji: "😇",
+  }
 } as const;
 
 function DateTime(
