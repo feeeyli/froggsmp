@@ -13,8 +13,12 @@ export const STREAMERS: StreamerSchema[] = [
     youtube_login: "Scortes",
     characters: [
       {
-        name: "Abaddon",
+        name: "Scottonauta",
         wiki_url: "https://frogg-smp.fandom.com/pt-br/wiki/Scottonauta",
+      },
+      {
+        name: "Abaddon",
+        wiki_url: "https://frogg-smp.fandom.com/pt-br/wiki/Abbadon",
       },
     ],
   },
