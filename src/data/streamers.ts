@@ -38,7 +38,7 @@ export const STREAMERS: StreamerSchema[] = [
       },
       {
         name: "Pierre Pintafacil",
-        wiki_url: "https://frogg-smp.fandom.com/pt-br/wiki/Umild",
+        wiki_url: "https://frogg-smp.fandom.com/pt-br/wiki/Umild#Pierre_PintaF%C3%A1cil",
       },
     ],
   },
