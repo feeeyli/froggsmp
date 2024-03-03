@@ -139,7 +139,7 @@ export const STREAMERS: StreamerSchema[] = [
     skin_id: "0861351f94d33483",
     twitch_login: "dreasbro",
     twitter_login: "DreasBro",
-    youtube_login: null,
+    youtube_login: "LivesDoDreas",
     characters: [
       {
         name: "DreasBro",
