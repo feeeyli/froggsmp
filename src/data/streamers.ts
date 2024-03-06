@@ -38,7 +38,8 @@ export const STREAMERS: StreamerSchema[] = [
       },
       {
         name: "Pierre Pintafacil",
-        wiki_url: "https://frogg-smp.fandom.com/pt-br/wiki/Umild#Pierre_PintaF%C3%A1cil",
+        wiki_url:
+          "https://frogg-smp.fandom.com/pt-br/wiki/Umild#Pierre_PintaF%C3%A1cil",
       },
     ],
   },
@@ -154,7 +155,7 @@ export const STREAMERS: StreamerSchema[] = [
     skin_id: "a141918f2aa18ebc",
     twitch_login: "febatista",
     twitter_login: "Febatista",
-    youtube_login: "Febatista",
+    youtube_login: "FebatistaLives",
     characters: [
       {
         name: "Febatista",
@@ -302,3 +303,28 @@ export const STREAMERS: StreamerSchema[] = [
     ],
   },
 ];
+
+export type StreamerNameType =
+  | "scottonauta"
+  | "umildlive"
+  | "tiba041"
+  | "kellerzons"
+  | "oakinoo"
+  | "ameizim"
+  | "bastet"
+  | "carrasquera"
+  | "dreasbro"
+  | "febatista"
+  | "fehdubs"
+  | "oflopi"
+  | "jinkiwinkki"
+  | "kaaory"
+  | "kojjlul"
+  | "ljoga"
+  | "mynluvsx"
+  | "imrafly"
+  | "yuyusaz";
+
+export function getStreamer(twitch_login: string) {
+  return STREAMERS.find((streamer) => streamer.twitch_login === twitch_login);
+}
