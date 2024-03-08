@@ -18,8 +18,8 @@ const fontPixel = Pixelify_Sans({
 });
 
 const fontPixel2 = fontLocal({
-  src: "../assets/pixel2.ttf",
-  variable: "--font-pixel2",
+  src: "../assets/minecraftia.ttf",
+  variable: "--font-minecraftia",
 });
 
 export const metadata: Metadata = {

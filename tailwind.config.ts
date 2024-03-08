@@ -54,6 +54,9 @@ const config = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      backgroundImage: {
+        book: "url(/book.png)",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -76,7 +79,7 @@ const config = {
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
         pixel: ["var(--font-pixel)", ...fontFamily.sans],
-        pixel2: ["var(--font-pixel2)", ...fontFamily.sans],
+        minecraftia: ["var(--font-minecraftia)", ...fontFamily.sans],
       },
     },
   },

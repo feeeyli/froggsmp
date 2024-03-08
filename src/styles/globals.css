@@ -184,6 +184,22 @@
   .scrollbar::-webkit-scrollbar-thumb:hover {
     @apply bg-primary/80;
   }
+
+  .scrollbar-book::-webkit-scrollbar {
+    @apply h-5 w-1.5;
+  }
+
+  .scrollbar-book::-webkit-scrollbar-track {
+    @apply bg-neutral-950/50;
+  }
+
+  .scrollbar-book::-webkit-scrollbar-thumb {
+    @apply bg-red-700;
+  }
+
+  .scrollbar-book::-webkit-scrollbar-thumb:hover {
+    @apply bg-red-700/80;
+  }
 }
 
 .transcript-markdown h1 {
