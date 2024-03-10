@@ -105,7 +105,7 @@ export default function TimelinePage() {
                         <AccordionContent className="text-base px-4">
                           {summary.list.length === 1 && (
                             <Markdown
-                              className="whitespace-pre-wrap [&_ul]:whitespace-normal [&>ul_p]:-ml-2 [&>ul]:ml-2 [&_ul]:list-inside [&_ul]:list-disc"
+                              className="whitespace-pre-wrap [&_ul]:whitespace-normal [&>ul_p]:-ml-2 [&>ul]:ml-2 [&_ul]:list-inside [&_ul]:list-[square]"
                               components={{
                                 li: ({ children }) => (
                                   <li>
@@ -134,7 +134,7 @@ export default function TimelinePage() {
                             </Markdown>
                           )}
                           {summary.list.length > 1 && (
-                            <ul className="list-disc list-inside pl-[8.5px]">
+                            <ul className="list-[square] list-inside pl-[8.5px]">
                               {summary.list.map((item) => (
                                 <li key={item}>
                                   <p className="-ml-2 inline-block">{item}</p>
