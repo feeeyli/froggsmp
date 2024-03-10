@@ -134,7 +134,7 @@ export default function TimelinePage() {
                             </Markdown>
                           )}
                           {summary.list.length > 1 && (
-                            <ul className="list-disc list-inside pl-[8.5px] py-3">
+                            <ul className="list-disc list-inside pl-[8.5px]">
                               {summary.list.map((item) => (
                                 <li key={item}>
                                   <p className="-ml-2 inline-block">{item}</p>
