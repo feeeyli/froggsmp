@@ -18,7 +18,7 @@ type StreamsProps = {
 
 export function Streams(props: StreamsProps) {
   return (
-    <section className="px-4 sm:px-8 md:px-20 lg:px-40 py-8 bg-secondary/10 flex flex-col gap-6">
+    <section className="px-4 sm:px-8 md:px-20 lg:px-40 py-8 flex flex-col gap-6">
       <div className="flex items-center justify-between">
         <h2 className="text-3xl font-semibold" id="lives">
           Streamers em live
@@ -34,9 +34,15 @@ export function Streams(props: StreamsProps) {
       <Carousel>
         <CarouselContent>
           {props.streams.length > 0 &&
-            props.streams.sort((a,b) => new Date(b.started_at).getTime() - new Date(a.started_at).getTime()).map((stream, i) => (
-              <Stream stream={stream} autoplay={i === 0} key={stream.login} />
-            ))}
+            props.streams
+              .sort(
+                (a, b) =>
+                  new Date(b.started_at).getTime() -
+                  new Date(a.started_at).getTime()
+              )
+              .map((stream, i) => (
+                <Stream stream={stream} autoplay={i === 0} key={stream.login} />
+              ))}
           {props.streams.length === 0 && <NoStreams />}
         </CarouselContent>
         <CarouselPrevious className="-left-1 sm:-left-4 lg:-left-12" />

@@ -7,6 +7,7 @@ import { Events } from "@/components/sections/events/events";
 import { Newspapers } from "@/components/sections/newspapers/newspapers";
 import { Streamers } from "@/components/sections/streamers/streamers";
 import { Streams } from "@/components/sections/streams/streams";
+import { Timeline } from "@/components/sections/timeline/timeline";
 import { Updates } from "@/components/sections/updates/updates";
 import { Watch } from "@/components/sections/watch/watch";
 import { StreamSchema } from "@/types/stream.schema";
@@ -28,7 +29,7 @@ export default async function Home() {
   return (
     <>
       <Header />
-      <main>
+      <main className="odd:[&>section]:bg-secondary/10">
         <Streams streams={streams} />
         <Streamers online_streamers={streams.map((stream) => stream.login)} />
         <Events
@@ -42,6 +43,7 @@ export default async function Home() {
           )}
         />
         <Newspapers newspapers={newspapers} />
+        <Timeline />
         <Watch vods={vods} />
       </main>
       <footer className="px-8 md:px-20 lg:px-40 py-10 bg-foreground text-background flex flex-col gap-4">

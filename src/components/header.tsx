@@ -17,46 +17,33 @@ export function Header() {
           alt="FroggSMP"
           className="h-10 hidden sm:block"
         />
-        <nav>
-          <ul className="flex flex-wrap justify-center">
-            <li>
-              <Button size="sm" variant="link" asChild>
-                <Link href="#lives">Lives</Link>
-              </Button>
-            </li>
-            <li>
-              <Button size="sm" variant="link" asChild>
-                <Link href="#participantes">Participantes</Link>
-              </Button>
-            </li>
-            <li>
-              <Button size="sm" variant="link" asChild>
-                <Link href="#eventos">Eventos</Link>
-              </Button>
-            </li>
-            <li>
-              <Button size="sm" variant="link" asChild>
-                <Link href="#atualizacoes">Atualizações</Link>
-              </Button>
-            </li>
-            <li>
-              <Button size="sm" variant="link" asChild>
-                <Link href="#correio">Correio Froggiano</Link>
-              </Button>
-            </li>
-            <li>
-              <Button size="sm" variant="link" asChild>
-                <Link href="#assistir">VODs</Link>
-              </Button>
-            </li>
-            <li>
-              <Button size="sm" variant="link" asChild>
-                <Link href="https://multifrogg.vercel.app" target="_blank">
-                  MultiFrogg <ExternalLink size="0.75rem" className="ml-2" />
-                </Link>
-              </Button>
-            </li>
-          </ul>
+        <nav className="flex flex-wrap justify-center md:justify-end md:max-w-[65%]">
+          <Button size="sm" variant="link" asChild>
+            <Link href="#lives">Lives</Link>
+          </Button>
+          <Button size="sm" variant="link" asChild>
+            <Link href="#participantes">Participantes</Link>
+          </Button>
+          <Button size="sm" variant="link" asChild>
+            <Link href="#eventos">Eventos</Link>
+          </Button>
+          <Button size="sm" variant="link" asChild>
+            <Link href="#atualizacoes">Atualizações</Link>
+          </Button>
+          <Button size="sm" variant="link" asChild>
+            <Link href="#correio">Correio Froggiano</Link>
+          </Button>
+          <Button size="sm" variant="link" asChild>
+            <Link href="#linha-do-tempo">Linha do Tempo</Link>
+          </Button>
+          <Button size="sm" variant="link" asChild>
+            <Link href="#assistir">VODs</Link>
+          </Button>
+          <Button size="sm" variant="link" asChild>
+            <Link href="https://multifrogg.vercel.app" target="_blank">
+              MultiFrogg <ExternalLink size="0.75rem" className="ml-2" />
+            </Link>
+          </Button>
         </nav>
       </header>
     </>

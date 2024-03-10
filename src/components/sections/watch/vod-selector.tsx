@@ -51,7 +51,7 @@ const Events = {
   "o-milagre": {
     name: "O Milagre",
     emoji: "😇",
-  }
+  },
 } as const;
 
 function DateTime(
@@ -135,7 +135,7 @@ export function VodSelector(props: VodSelectorProps) {
             DayContent: (p) =>
               DateTime({ ...p, vods: props.vods, showServerDay }),
           }}
-          className="rounded-md border"
+          className="rounded-md border bg-background"
           month={month}
           onMonthChange={setMonth}
         />

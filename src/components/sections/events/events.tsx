@@ -24,7 +24,7 @@ export function Events(props: EventsProps) {
     addHours(new Date(props.events[0].time), 2).getTime();
 
   return (
-    <section className="py-8 px-4 sm:px-8 md:px-20 lg:px-40 flex flex-col gap-6 justify-center bg-secondary/10">
+    <section className="py-8 px-4 sm:px-8 md:px-20 lg:px-40 flex flex-col gap-6 justify-center">
       <h2 className="text-3xl font-semibold" id="eventos">
         Eventos
       </h2>
