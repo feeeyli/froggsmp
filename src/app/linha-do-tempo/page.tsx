@@ -128,7 +128,7 @@ export default function TimelinePage() {
                           <AccordionContent className="text-base py-2 px-4">
                             {summary.list.length === 1 && (
                               <Markdown
-                                className="whitespace-pre-wrap [&_ul]:whitespace-normal [&>ul_p]:-ml-2 [&>ul]:ml-2 [&_ul]:list-inside [&_ul]:list-[square]"
+                                className="font-sans whitespace-pre-wrap [&_ul]:whitespace-normal [&>ul_p]:-ml-2 [&>ul]:ml-2 [&_ul]:list-inside [&_ul]:list-[square]"
                                 components={{
                                   li: ({ children }) => (
                                     <li>
@@ -143,10 +143,10 @@ export default function TimelinePage() {
                                   ),
                                   blockquote: ({ children }) => (
                                     <blockquote
-                                      className="whitespace-normal [&_ul]:!list-['-_'] [&_p]:whitespace-pre-wrap bg-book bg-contain bg-no-repeat h-72 md:h-96 pt-7 pb-5 px-8 pr-5 aspect-[146/180]"
+                                      className="whitespace-normal [&_ul]:!list-['-_'] [&_p]:whitespace-pre-wrap bg-book bg-contain bg-no-repeat h-72 md:h-96 pt-[1.875rem] pb-5 px-8 pr-5 aspect-[146/180]"
                                       style={{ imageRendering: "pixelated" }}
                                     >
-                                      <div className="overflow-y-auto h-full space-y-4 scrollbar-book">
+                                      <div className="overflow-y-auto h-full space-y-4 scrollbar-book font-pixel">
                                         {children}
                                       </div>
                                     </blockquote>
@@ -157,7 +157,7 @@ export default function TimelinePage() {
                               </Markdown>
                             )}
                             {summary.list.length > 1 && (
-                              <ul className="list-[square] list-inside pl-[8.5px]">
+                              <ul className="list-[square] list-inside pl-[8.5px] font-sans">
                                 {summary.list.map((item) => (
                                   <li key={item}>
                                     <p className="-ml-2 inline-block">{item}</p>

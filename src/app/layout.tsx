@@ -1,7 +1,7 @@
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { Noto_Sans as FontSans, Pixelify_Sans } from "next/font/google";
+import { Nunito as FontSans, Pixelify_Sans } from "next/font/google";
 import fontLocal from "next/font/local";
 import "../styles/globals.css";
 
