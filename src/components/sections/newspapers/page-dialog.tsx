@@ -36,7 +36,10 @@ const charactersNames = {
   carras: "carrasquera",
   ljoga: "ljoga",
   myn: "mynluvsx",
-  dr_rodrigo: "umildlive"
+  dr_rodrigo: "umildlive",
+  kaaory: "kaaory",
+  febatista: "febatista",
+  roberto: "umildlive"
 };
 
 const transcriptVariants = cva(
