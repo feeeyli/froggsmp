@@ -42,7 +42,7 @@ export default async function Home() {
             (x, y) => new Date(y.date).getTime() - new Date(x.date).getTime()
           )}
         />
-        <Newspapers newspapers={newspapers} />
+        <Newspapers newspapers={newspapers.sort((a, b) => b.edition - a.edition)} />
         <Timeline />
         <Watch vods={vods} />
       </main>
