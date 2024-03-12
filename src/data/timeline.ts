@@ -10,6 +10,7 @@ export const TIMELINE: {
     skin_id?: string;
     vods?: string[];
     list: string[];
+    credit_summary?: string;
   }[];
 }[] = [
   {
@@ -80,8 +81,29 @@ export const TIMELINE: {
       {
         player: "scottonauta",
         skin_id: "56097d3643dc64f5",
-        vods: [],
-        list: ["*[Em progresso]*"],
+        vods: [
+          "https://youtu.be/LregTSp9oQk?si=t_OEgALnVGNwg7C0",
+          "https://youtu.be/WkoWxzZXEOc?si=rPaXde_bN3pgAGi0",
+          "https://youtu.be/pU0ztj7SZlU?si=ZfAcTlnDN7nL-W6o",
+        ],
+        list: [
+          "Scott, antes de entrar no servidor, começa estudando como é uma notificação judicial, ele analisa diversos papéis de processo que ele encontra no google para se inspirar. \n\nDepois, ele começa a criar o papel de processo para o F!Tiba, F!Dreas e F!Carrasquera\n\nProcesso para F!Tiba:\n\n![Processo para F!Tiba](/linha-do-tempo/dia-5/processo-tiba.png)\n\nProcesso para F!Dreas:\n\n![Processo para F!Dreas](/linha-do-tempo/dia-5/processo-dreas.png)\n\nProcesso para F!Carrasquera:\n\n![Processo para F!Carrasquera](/linha-do-tempo/dia-5/processo-carras.png)\n\n---\n\nAssim que F!Scott entra, ele se depara com tudo vazio, as casas haviam sido movidas.\nEle também encontra um bilhete onde costumava ser sua casa, no bilhete havia as coordenadas de onde deixaram a sua casa.\n\n![Coordenadas](/linha-do-tempo/dia-5/coordenadas-scott.png)\n\nDepois de chegar em sua casa ele vê que seus baús conectados estão desconectados e bagunçados, então FROGG-01 aparece e o ajuda.\n\nF!Scott acaba achando um folheto do noticiário “Sapostando” em sua caixa de correio\n\n![Sapostando](/linha-do-tempo/dia-5/sapostando.png)\n\nDepois de um tempo saindo e conversando com os outros pela cidade, F!Scott acaba indo para a casa de F!Carrasquera, e “secretamente” observa o F!Carrasquera  o F!Roberto Goodman em uma conversa sobre o que iriam fazer em relação ao processo que F!Carrasquera estava tomando.\n\nAssim que a conversa entre os dois acabou, F!Scott foi em direção a casa de F!Tiba, no qual ele invadiu com uma glock e ficou atirando, gritando e ameaçando ele.\n\nQuando tudo acabou, F!Scott foi para a igreja do fofinho fazer uma reza, antes de ir fazer mais maldade com os outros da cidade\n\nPor último, F!Scott andou em busca de um lugar para construir, então ele decidiu que ao lado do inferno ele construiria sua nova casa, e então deslogou do Server.",
+        ],
+        credit_summary: "Kolhsavix",
+      },
+    ],
+  },
+  {
+    day: "01-13",
+    server_day: 6,
+    summaries: [
+      {
+        player: "bastet",
+        vods: ["https://youtu.be/7TXckTZqaLc?si=VjzeDPpsJz2BurFj"],
+        list: [
+          "F!Bastet inicia seu dia encontrando um skatista no telhado de sua casa e sai em busca de árvores de Jacarandá.\n\nNão achando o Jacarandá específico, F!Bastet vai para o spawn e tenta usar as waystones para ir ao centro comunitário, mas descobre que não existe mais a que o leva até lá.\n\nF!Bastet volta para casa e encontra saplings de Jacarandá em um de seus baús, sem bone meal em mãos, ele faz uma composteira.\n\nF!Bastet recebe uma mensagem a noite dizendo, “You feel like something is chasing you...” de um Nightmare Stalker, mas ao amanhecer, ele desaparece.\n\nF!Bastet volta a sua missão de conseguir madeira de Jacarandá.\n\nF!Bastet vai para casa e continua a construi-la.\n\nF!Bastet começa a decorar o interior da casa.\n\nF!Yumi aparece para ajudar F!Bastet, os dois vão em busca de clay.\n\nApós coletarem clay, os dois voltam para a casa do F!Bastet e continuam a decorar.\n\nF!Yumi avisa para ter cuidado com o F!Scott se for para o spawn.\n\nF!Bastet se despede e encerra seu dia no servidor.",
+        ],
+        credit_summary: "gabissista",
       },
     ],
   },

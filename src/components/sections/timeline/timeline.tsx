@@ -13,8 +13,15 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { getStreamer } from "@/data/streamers";
 import { TIMELINE } from "@/data/timeline";
+import { HelpCircle } from "lucide-react";
 import Link from "next/link";
 import Markdown from "react-markdown";
 
@@ -110,8 +117,8 @@ export function Timeline() {
                             )}
                           </div>
                         </AccordionTrigger>
-                        <AccordionContent className="text-base py-2 px-4">
-                          {summary.list.length === 1 && (
+                        <AccordionContent className="text-base py-2 px-4 grid grid-cols-[1fr_1rem] items-start gap-2">
+                          {summary.list.length <= 1 && (
                             <Markdown
                               className="font-sans whitespace-pre-wrap [&_ul]:whitespace-normal [&>ul_p]:-ml-2 [&>ul]:ml-2 [&_ul]:list-inside [&_ul]:list-[square]"
                               components={{
@@ -136,9 +143,18 @@ export function Timeline() {
                                     </div>
                                   </blockquote>
                                 ),
+                                img: ({ node, ...props }) => (
+                                  <Link
+                                    href={props.src ?? "#"}
+                                    className="inline-block"
+                                  >
+                                    {/* eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text */}
+                                    <img {...props} className="w-56" />
+                                  </Link>
+                                ),
                               }}
                             >
-                              {summary.list[0]}
+                              {summary.list[0] ?? "*[Em progresso]*"}
                             </Markdown>
                           )}
                           {summary.list.length > 1 && (
@@ -150,6 +166,26 @@ export function Timeline() {
                               ))}
                             </ul>
                           )}
+                          {summary.list.length > 0 &&
+                            summary.credit_summary && (
+                              <TooltipProvider>
+                                <Tooltip>
+                                  <TooltipTrigger className="text-primary">
+                                    <HelpCircle size="1rem" />
+                                  </TooltipTrigger>
+                                  <TooltipContent>
+                                    resumo feito por{" "}
+                                    <Link
+                                      href={`https://twitter.com/${summary.credit_summary}`}
+                                      target="_blank"
+                                      className="text-primary hover:underline font-sans"
+                                    >
+                                      @{summary.credit_summary}
+                                    </Link>
+                                  </TooltipContent>
+                                </Tooltip>
+                              </TooltipProvider>
+                            )}
                         </AccordionContent>
                       </AccordionItem>
                     );
