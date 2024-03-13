@@ -39,7 +39,7 @@ const charactersNames = {
   dr_rodrigo: "umildlive",
   kaaory: "kaaory",
   febatista: "febatista",
-  roberto: "umildlive"
+  roberto: "umildlive",
 };
 
 const transcriptVariants = cva(
@@ -59,14 +59,18 @@ type PageDialogProps = {
 };
 
 export function PageDialog(props: PageDialogProps) {
-  const [page, setPage] = useQueryState("pagina");
+  const [page, setPage] = useQueryState("jornal");
   const [showTranscript, setShowTranscript] = useState<number[]>([]);
 
   const editionDay = page ? "2024-" + page : undefined;
 
-  const edition = props.newspapers.find(
-    (newspaper) => newspaper.day === editionDay
-  );
+  const edition = props.newspapers.find((newspaper) => {
+    if (!page) return undefined;
+
+    return /\d\d-\d\d/.test(page)
+      ? newspaper.day === editionDay
+      : newspaper.edition === Number(page);
+  });
 
   const open = !!editionDay && !!edition;
 

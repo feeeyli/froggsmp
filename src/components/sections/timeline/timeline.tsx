@@ -146,6 +146,7 @@ export function Timeline() {
                                 img: ({ node, ...props }) => (
                                   <Link
                                     href={props.src ?? "#"}
+                                    target="_blank"
                                     className="inline-block"
                                   >
                                     {/* eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text */}

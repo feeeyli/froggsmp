@@ -62,7 +62,7 @@ export function Newspaper(props: NewspaperProps) {
               <Page key={page.picture} page={page} />
             ))}
             <Suspense>
-              <PageTrigger day={props.newspaper.day} />
+              <PageTrigger day={props.newspaper.edition} />
             </Suspense>
           </section>
         )}
