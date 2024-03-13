@@ -273,7 +273,7 @@ export const STREAMERS: StreamerSchema[] = [
     ],
   },
   {
-    display_name: "Raflyer",
+    display_name: "Rafly",
     avatar_url:
       "https://static-cdn.jtvnw.net/jtv_user_pictures/41d41923-67ac-4498-9df5-e4d38f46f96f-profile_image-300x300.png",
     skin_id: "cf482f5e94b029a4",
@@ -282,8 +282,8 @@ export const STREAMERS: StreamerSchema[] = [
     youtube_login: "livesdarafly",
     characters: [
       {
-        name: "Raflyer",
-        wiki_url: "https://frogg-smp.fandom.com/pt-br/wiki/Raflyer",
+        name: "Rafly",
+        wiki_url: "https://frogg-smp.fandom.com/pt-br/wiki/Rafly",
       },
     ],
   },
