@@ -4,7 +4,7 @@ import { StreamerSchema } from "@/types/streamer.schema";
 
 export const STREAMERS: StreamerSchema[] = [
   {
-    display_name: "Scottonauta",
+    display_name: "Scott",
     avatar_url:
       "https://static-cdn.jtvnw.net/jtv_user_pictures/1917209e-3c4e-49c2-8c09-e4e77141e1e1-profile_image-300x300.png",
     skin_id: "d63e68c8b065ad0e",
@@ -13,8 +13,8 @@ export const STREAMERS: StreamerSchema[] = [
     youtube_login: "Scortes",
     characters: [
       {
-        name: "Scottonauta",
-        wiki_url: "https://frogg-smp.fandom.com/pt-br/wiki/Scottonauta",
+        name: "Scott",
+        wiki_url: "https://frogg-smp.fandom.com/pt-br/wiki/Scott",
       },
       {
         name: "Abaddon",
