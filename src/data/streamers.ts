@@ -14,7 +14,7 @@ export const STREAMERS: StreamerSchema[] = [
     characters: [
       {
         name: "Scott",
-        wiki_url: "https://frogg-smp.fandom.com/pt-br/wiki/Scott",
+        wiki_url: "https://frogg-smp.fandom.com/pt-br/wiki/Scottonauta",
       },
       {
         name: "Abaddon",
