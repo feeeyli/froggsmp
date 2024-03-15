@@ -12,16 +12,15 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { Separator } from "@/components/ui/separator";
 import { getStreamer } from "@/data/streamers";
 import { TIMELINE } from "@/data/timeline";
-import { HelpCircle, MoveLeft } from "lucide-react";
+import { AlertTriangle, HelpCircle, MoveLeft } from "lucide-react";
 import Link from "next/link";
 import Markdown from "react-markdown";
 
@@ -44,6 +43,58 @@ export default function TimelinePage() {
       <main className="py-8 px-4 sm:px-8 md:px-12 flex flex-col items-center gap-4">
         <h1 className="text-3xl font-bold">Linha do tempo FroggSMP</h1>
         <Timeline className="w-full group">
+          <TimelineItem>
+            <TimelineItemName></TimelineItemName>
+            <TimelineItemIndicator className="even:[&_span]:bg-primary/40 even:[&_span]:border-0 even:[&_span]:w-1.5" />
+            <TimelineItemContent>
+              <Accordion type="multiple">
+                <AccordionItem value="info">
+                  <AccordionTrigger className="hover:bg-secondary/5 hover:no-underline px-4">
+                    <div className="flex items-center gap-2.5">
+                      <div className="h-6 w-6 flex items-center justify-center">
+                        <AlertTriangle
+                          size="1.25rem"
+                          className="text-primary"
+                        />
+                      </div>{" "}
+                      Informações importantes
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="text-base py-2 px-4">
+                    <ul className="list-[square] list-inside pl-2 flex flex-col gap-2">
+                      <li>
+                        Pode haver a falta de alguns resumos, isso é,{" "}
+                        <em>normalmente</em>, devido a falta dos vods
+                      </li>
+                      <li>
+                        Os créditos dos resumos ficam no icône &quot;
+                        <HelpCircle
+                          size="1rem"
+                          className="text-primary inline-block"
+                        />
+                        &quot; ao lado de cada texto
+                      </li>
+                      <li>
+                        A linha do tempo ainda está em produção, novos resumos
+                        vão ser adicionados diariamente
+                      </li>
+                      <li>
+                        Caso você deseje ajudar com a escrita dos resumos, me
+                        mande uma DM no{" "}
+                        <Link
+                          href="https://twitter.com/feeeyli"
+                          target="_blank"
+                          className="underline text-primary"
+                        >
+                          twitter
+                        </Link>
+                      </li>
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </TimelineItemContent>
+          </TimelineItem>
           {TIMELINE.map((item, i, arr) => (
             <TimelineItem
               key={item.server_day}
@@ -167,6 +218,27 @@ export default function TimelinePage() {
                                       <img {...props} className="w-56" />
                                     </Link>
                                   ),
+                                  code: ({ children }) => (
+                                    <p className="chat bg-foreground/50 text-background px-3 py-1 font-pixel flex flex-col gap-1">
+                                      {children
+                                        ?.toString()
+                                        .split("\n\n")
+                                        .map((text, i) => (
+                                          <span key={i} className="block">
+                                            <small className="text-xs inline-block mr-2 cursor-default select-none">
+                                              {">"}
+                                            </small>
+                                            {text}
+                                          </span>
+                                        ))}
+                                    </p>
+                                  ),
+                                  pre: ({ children }) => <>{children}</>,
+                                  ol: ({ children }) => (
+                                    <ol className="whitespace-normal list-decimal list-inside flex flex-col gap-4 marker:font-pixel marker:font-bold [&_.chat]:ml-[1.25rem] [&_.chat]:mt-2 pl-2">
+                                      {children}
+                                    </ol>
+                                  ),
                                 }}
                               >
                                 {summary.list[0] ?? "*[Em progresso]*"}
@@ -181,26 +253,27 @@ export default function TimelinePage() {
                                 ))}
                               </ul>
                             )}
-                            {summary.list.length > 0 &&
-                              summary.credit_summary && (
-                                <TooltipProvider>
-                                  <Tooltip>
-                                    <TooltipTrigger className="text-primary">
-                                      <HelpCircle size="1rem" />
-                                    </TooltipTrigger>
-                                    <TooltipContent>
-                                      resumo feito por{" "}
-                                      <Link
-                                        href={`https://twitter.com/${summary.credit_summary}`}
-                                        target="_blank"
-                                        className="text-primary hover:underline font-sans"
-                                      >
-                                        @{summary.credit_summary}
-                                      </Link>
-                                    </TooltipContent>
-                                  </Tooltip>
-                                </TooltipProvider>
-                              )}
+                            {summary.credit_summary && (
+                              <Popover>
+                                <PopoverTrigger className="text-primary">
+                                  <HelpCircle size="1rem" />
+                                </PopoverTrigger>
+                                <PopoverContent
+                                  className="px-3 py-1.5 text-sm w-auto"
+                                  side="top"
+                                >
+                                  resumo {summary.list.length === 0 && "sendo "}
+                                  feito por{" "}
+                                  <Link
+                                    href={`https://twitter.com/${summary.credit_summary}`}
+                                    target="_blank"
+                                    className="text-primary hover:underline font-sans"
+                                  >
+                                    @{summary.credit_summary}
+                                  </Link>
+                                </PopoverContent>
+                              </Popover>
+                            )}
                           </AccordionContent>
                         </AccordionItem>
                       );

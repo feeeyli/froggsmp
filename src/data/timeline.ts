@@ -138,4 +138,78 @@ export const TIMELINE: {
       },
     ],
   },
+  {
+    day: "01-15",
+    server_day: 8,
+    summaries: [
+      {
+        player: "bastet",
+        vods: ["https://youtu.be/RdJINBz3g5U?si=3lmt2s7GOQz-Thuz"],
+        credit_summary: "wallacoty",
+        list: [],
+      },
+      {
+        player: "imrafly",
+        vods: [
+          "https://youtu.be/YkhyFmijQ88?si=t3zvOj-FslH59sMz",
+          "https://youtu.be/L7bQinPg4_I?si=7NmQUHMefvxgN3MQ",
+        ],
+        credit_summary: "b1tter_peach",
+        list: [],
+      },
+    ],
+  },
+  {
+    day: "01-16",
+    server_day: 9,
+    summaries: [
+      {
+        player: "dreasbro",
+        vods: ["https://www.twitch.tv/videos/2034541355?t=2h18m36s"],
+        credit_summary: "opicolebomb",
+        list: [],
+      },
+    ],
+  },
+  {
+    day: "01-17",
+    server_day: 10,
+    summaries: [
+      {
+        player: "bastet",
+        vods: [],
+        credit_summary: "Kolhsavix",
+        list: [],
+      },
+      {
+        player: "dreasbro",
+        vods: ["https://www.twitch.tv/videos/2035506291?t=3h43m21s"],
+        list: [
+          `F!Dreas começa seu dia preparando funis e automatizando suas fornalhas para esquentar seu estoque de ferro. Com tudo ajeitado ele começa a escrever um livro.\n\n> Todo dia - Estou sendo processado.\n> \n> Aqui neste livro tentarei explicar o máximo de coisas que andaram ocorrendo, como fui processado, e como sou inocente.\n> \n> Além de apontar falhas no sistema legislativo dessa cidade.\n\nDepois de começar a escrever, ele parte ao encontro de F!Scott e acidentalmente sobe no Inferno Voador dele e solta uma indireta no chat. F!Scott diz para ele ficar onde está, F!Dreas obedece e fica dançando enquanto espera por ele. F!Scott aparece e o questiona sobre invadir sua casa, eles tem uma breve conversa e F!Dreas pergunta se ele seria advogado e explica sobre estar sendo processado. Eles ficam um bom tempo negociando, F!Scott ameaça F!Dreas diversas vezes mas logo diz que poderia arrumar um advogado para ele porem em troca iria pegar parte de sua alma. Ele aceita, F!Scott diz que em breve seu advogado chegará em sua caixa de correio e expulsa F!Dreas do local a tapas.\n\nF!Dreas retorna para casa e continua seu livro.\n\n> Dia 17 - Vendi minha alma prum 'Scott', ele me prometeu um advogado dos melhores para me defender.\n> \n> ---\n> \n> Porque sou inocente?\n> \n> Denuncia: Muito Couro\n> \n> 1&#46; Não existe leis de limite nessa cidade.\n> \n> 2&#46; Eu tenho muito couro pois eu era solitário na cidade pela tarde, então saia em aventuras, descobri muita coisa.\n> \n> 3&#46; Nas minhas aventuras pegava couro para fazer mochila e melhora-las.\n> \n> 4&#46; Ajudei meu amigo Tiba para mudar de casa e conseguir organizar seus afazeres, então fiz algumas mochilas com o couro que consegui.\n> \n> 5&#46; Não há como provar que consegui de forma ilegal.\n> \n> 6&#46; Se a cidade não tem leis não há como comprovar se algo é legal ou ilegal.\n> \n> ---\n> \n> História: Eu sou uma pessoa que se aventura por ai, batalhei com muitos monstros, conheci lugares incríveis, inclusive consegui um cacto. Nessas aventuras eu acabei matando animais para conseguir matérias primas para aprimorar minha vivência na cidade.\n> \n> ---\n> \n> Com isso, consegui bastante couro e com esse couro eu os guardei pra utilizá-los depois que construísse a minha casa. No meio disso, Tiba, outro cidadão da cidade, me pediu para o ajudar a organizar a vida dele, pois vivia num muquifo, sem nem banheiro, só baú e fogão.\n> \n> ---\n> \n> Chegando em sua casa vejo muitos baús cheios de itens, o que prejudicaria caso quebrasse-o e tudo cairia no chão, para isso transportei tudo para uma mochila, feitas com os couros que adquiri nas minhas aventuras. Tiba ficou feliz com minha ajuda, e eu nem cobrei nada, ele continuou com as mochilas em sua casa.\n> \n> ---\n> \n> Agora estou sendo processado por "ter muito couro" (?)\n> \n> Mas afinal, qual é o limite do couro?\n> Qual a lei que menciona o limite do couro?\n> Quem é couro?\n> Porque eu?\n> Isso está estranho.\n\nDepois de escrever ele faz uma caixa de correio para sua casa.\n\nF!Dreas chama por um deus sapinho e pede para ele trazer sua casa do spawn para seu novo local. Ele também pergunta se o sapinho seria advogado mas o mesmo diz que *"infelizente"* não. Ele volta para casa e escreve em seu livro.\n\n> 7&#46; Criei a palavra ibrigado, que é quando você tá muito grato.\n\nEle minera um pouco e o deus sapinho volta e diz que já moveu sua casa mas precisaria que ele visse. Ambos sobem e F!Dreas vê sua nova casa e gosta mas percebe que não poderá mais cagar olhando para a policia, deus sapinho então coloca uma foto de uma delegacia na janela do banheiro.\n\nF!Dreas senta em sua privada, olha a delegacia e encerra seu dia no servidor.`,
+        ],
+      },
+      {
+        player: "jinkiwinkki",
+        vods: [],
+        list: [],
+      },
+      {
+        player: "umildlive",
+        skin_id: "961f800c9a5dc781",
+        vods: [
+          "https://youtu.be/gIr9rFqunZU?si=OmDE5WiWvhj3e2cn",
+          "https://youtu.be/CRLrQ0xjCYI?si=CDK7xesne3FkglOv",
+        ],
+        list: [
+          'F!Roberto começa seu dia indo para o spawn e descobrindo as mudanças que houveram por lá, como a prefeitura e a feira do produtor. Na feira ele encontra F!Kojj e, discretamente, pergunta sobre as armadilhas mas ele diz não ter tido tempo pra mexer com elas. F!Kojj também mostra suas lojas, uma de itens de segurança e outra de carpintaria, e logo após isso F!Roberto deixa o local e visita brevemente o sapostando e o hospital.\n\nF!Roberto vai para a sala secreta embaixo de seu escritório e mostra as mudanças de segurança que fez. Ele sai e começa a explicar seu plano para o julgamento mas logo é interrompido por Frogginha saindo da terra e invocando F!Jinki no local. Ambos se apresentam de maneira acida e F!Roberto chama ela para seu escritório. Ele a pergunta para quem estaria advogando mas ela se recusa a responder por ser algo confidencial. F!Jinki diz que acha que a cidade necessita de um prefeito e F!Roberto concorda. Ele fala para ela ficar de olho em F!Carras e roubar informações sobre o mesmo e ela deixa o local.\n\nF!Roberto, agora sozinho, volta a contar sobre seus planos para caso F!Tiba seja declarado culpado, onde ele fugiria por um túnel subterrâneo, próximo ao tribunal, para um bunker.\n\nEle vai para o spawn e lá encontra F!Scott e Frogginha, eles tem uma breve conversa e logo se encontram também com F!Kojj na feira. F!Roberto se separa para buscar algumas lãs e quando volta acha apenas F!Kojj, eles conversam sobre o túnel e o bunker mas decidem continuar a conversa no escritório de F!Roberto. Lá, ambos descem na sala secreta e F!Kojj mostra algumas fotos que conseguiu de F!Scott e do que ele havia fazendo nos últimos dias porem, na hora de mostrar uma câmera que implantou na casa dele, F!Kojj percebe que ela não está funcionado.\n\nF!Roberto e F!Kojj invadem o Inferno Voador de F!Scott mas são surpreendidos por um sapo policial, F!Roberto então cria uma distração enquanto F!Kojj arruma a câmera. Depois de feito, os 2 se encontram e vão para a casa de F!Carras e bolam um plano: F!Kojj vai replicar a casa em outro local como um "estúdio" e assim podem implantar provas falsas.\n\nEnquanto os 2 investigavam outra parte da casa de F!Scott, F!Roberto cai do servidor devido a forças maiores e assim que retorna ele está de volta em sua sala secreta e com uma pessoa misteriosa no servidor.\n\nF!Roberto vai para o spawn e encontra F!Kaory mas antes de sequer falar com ela, ele recebe uma mensagem misteriosa:\n\n```\nNos vamos nos encontrar quando for a hora certa, mais saiba que você está sendo vigiado, por bem ou por mal\n```\n\nLogo após a mensagem ele sai apressado para seu escritório pela linha do trem, lá F!Kojj surge e os 2 conversam sobre os planos, F!Roberto comenta sobre a mensagem, F!Kojj diz desconfiar de F!Roberto por ele ter hesitado em liberar acesso aos seus baús secretos e eles vão para o escritório e começam a montar um botão de pânico, para explodir a sala secreta em situação de emergência.\n\nOs 2 voltam a explorar as diversas partes da casa de F!Scott e a implantar câmeras.\n\nF!Roberto se despede de F!Kojj com beijos e volta para seu escritório, porem, algo leva ele para um lugar inteiramente branco, se apresenta em sua frente e conversa com ele.\n\n![Entidade](linha-do-tempo/dia-10/entidade.png)\n\n```\nRoberto Goodman, ou devo dizer, Umild, eu venho te observando a algum tempo\n\nVocê não faz ideia do futuro não distante que lhe aguarda\n\nSuas intenções podem não ser as melhores, mas a sua voz sem duvida alguma é de um carisma benéfico para meus planos\n\nVocê, entretanto, não deve de tudo saber agora\n\nContinue com seus planos, faça o que bem entender, no momento devido, revelarei segredos a muito escondidos\n\nA ti, lhe concedo três perguntas, seja elas quais forem, se ao seu interesse, as responderei\n```\n\nF!Roberto faz as perguntas e a entidade o responde.\n\n1. "Você sabe se alguém desconfia dos meus planos?" `Desconfiam, varias pessoas, mas nenhuma tem certeza`\n2.  "Eu posso confiar 100% no F!Kojj? Ou ele tá armando pra cima de mim?" `Ele confia em você, mas não vai perdoar ser for traido`\n3. "Quem você acha que deve ser o meu real foco pra que eu faça que o F!Tiba seja inocentado?" `O demonio que na montanha se deita`\n\nF!Roberto pede mais uma pergunta e a entidade o concede.\n\n```\nIsso será a ti cobrado no futuro, mas a pergunta foi concedida\n```\n\nEle pergunta se existe algum jeito de se conectar com a entidade caso precise e ela o responde que sim.\n\n```\nEstou sempre de olho em você, ao ficar sozinho, me chame, e assim que possivel entrarei em contato\n```\n\nF!Roberto finaliza suas perguntas e a entidade diz:\n\n```\nAgora, Umild, você deve ir e lembre-se, nos nunca nos encontramos\n\nQuando for a hora, te chamarei aqui denovo\n```\n\nApós isso, F!Roberto é levado para a igreja de Fofinho e encerra seu dia no servidor.',
+        ],
+      },
+      {
+        player: "scottonauta",
+        skin_id: "56097d3643dc64f5",
+        vods: [],
+        list: [],
+      },
+    ],
+  },
 ];

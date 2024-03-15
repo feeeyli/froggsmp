@@ -12,13 +12,12 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { Separator } from "@/components/ui/separator";
 import { getStreamer } from "@/data/streamers";
 import { TIMELINE } from "@/data/timeline";
 import { HelpCircle } from "lucide-react";
@@ -153,6 +152,27 @@ export function Timeline() {
                                     <img {...props} className="w-56" />
                                   </Link>
                                 ),
+                                code: ({ children }) => (
+                                  <p className="chat bg-foreground/50 text-background px-3 py-1 font-pixel flex flex-col gap-1">
+                                    {children
+                                      ?.toString()
+                                      .split("\n\n")
+                                      .map((text, i) => (
+                                        <span key={i} className="block">
+                                          <small className="text-xs inline-block mr-2 cursor-default select-none">
+                                            {">"}
+                                          </small>
+                                          {text}
+                                        </span>
+                                      ))}
+                                  </p>
+                                ),
+                                pre: ({ children }) => <>{children}</>,
+                                ol: ({ children }) => (
+                                  <ol className="whitespace-normal list-decimal list-inside flex flex-col gap-4 marker:font-pixel marker:font-bold [&_.chat]:ml-[1.25rem] [&_.chat]:mt-2 pl-2">
+                                    {children}
+                                  </ol>
+                                ),
                               }}
                             >
                               {summary.list[0] ?? "*[Em progresso]*"}
@@ -167,26 +187,27 @@ export function Timeline() {
                               ))}
                             </ul>
                           )}
-                          {summary.list.length > 0 &&
-                            summary.credit_summary && (
-                              <TooltipProvider>
-                                <Tooltip>
-                                  <TooltipTrigger className="text-primary">
-                                    <HelpCircle size="1rem" />
-                                  </TooltipTrigger>
-                                  <TooltipContent>
-                                    resumo feito por{" "}
-                                    <Link
-                                      href={`https://twitter.com/${summary.credit_summary}`}
-                                      target="_blank"
-                                      className="text-primary hover:underline font-sans"
-                                    >
-                                      @{summary.credit_summary}
-                                    </Link>
-                                  </TooltipContent>
-                                </Tooltip>
-                              </TooltipProvider>
-                            )}
+                          {summary.credit_summary && (
+                            <Popover>
+                              <PopoverTrigger className="text-primary">
+                                <HelpCircle size="1rem" />
+                              </PopoverTrigger>
+                              <PopoverContent
+                                className="px-3 py-1.5 text-sm w-auto"
+                                side="top"
+                              >
+                                resumo {summary.list.length === 0 && "sendo "}
+                                feito por{" "}
+                                <Link
+                                  href={`https://twitter.com/${summary.credit_summary}`}
+                                  target="_blank"
+                                  className="text-primary hover:underline font-sans"
+                                >
+                                  @{summary.credit_summary}
+                                </Link>
+                              </PopoverContent>
+                            </Popover>
+                          )}
                         </AccordionContent>
                       </AccordionItem>
                     );
