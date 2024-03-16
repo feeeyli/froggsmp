@@ -136,6 +136,7 @@ export function VodSelector(props: VodSelectorProps) {
               DateTime({ ...p, vods: props.vods, showServerDay }),
           }}
           className="rounded-md border bg-background"
+          showOutsideDays={false}
           month={month}
           onMonthChange={setMonth}
         />
