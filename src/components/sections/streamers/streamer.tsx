@@ -32,14 +32,29 @@ export function Streamer(props: StreamerProps) {
           alt={`Imagem de ${props.streamer.display_name}`}
           className="md:h-52 md:w-52 h-36 w-36 rounded-md"
         />
-        <img
-          src={`https://s.namemc.com/2d/skin/face.png?id=${props.streamer.skin_id}&scale=32`}
-          alt={`Skin de ${props.streamer.display_name}`}
-          style={{
-            imageRendering: "pixelated",
-          }}
-          className="h-10 w-10 absolute bottom-2 right-2 border-background border-2 md:group-hover:h-20 md:group-hover:w-20 transition-all"
-        />
+        <div className="absolute bottom-2 right-2 w-12 md:group-hover:w-20 aspect-[120/111] transition-all">
+          <img
+            src={
+              props.streamer.skin_id
+                ? `https://s.namemc.com/2d/skin/face.png?id=${props.streamer.skin_id}&scale=32`
+                : `https://crafatar.com/renders/head/${props.streamer.minecraft_uuid}?overlay`
+            }
+            alt={`Skin de ${props.streamer.display_name}`}
+            // style={{
+            //   imageRendering: "pixelated",
+            // }}
+            className="relative z-10 m-auto"
+          />
+          <img
+            src={
+              props.streamer.skin_id
+                ? `https://s.namemc.com/2d/skin/face.png?id=${props.streamer.skin_id}&scale=32`
+                : `https://crafatar.com/renders/head/${props.streamer.minecraft_uuid}?overlay`
+            }
+            alt={`Skin de ${props.streamer.display_name}`}
+            className="absolute scale-[1.15] md:group-hover:scale-110 transition-transform inset-0 brightness-0 invert"
+          />
+        </div>
       </picture>
       <footer className="flex flex-col py-2 px-3 bg-secondary/10 gap-3 md:w-52 w-36">
         <div className="md:grid flex flex-col grid-cols-[auto_2rem] items-center gap-2">

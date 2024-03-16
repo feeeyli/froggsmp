@@ -201,12 +201,13 @@ export function VodSelector(props: VodSelectorProps) {
                         onClick={() => setVod(vod.streamer)}
                       >
                         <img
-                          src={`https://s.namemc.com/2d/skin/face.png?id=${streamer.skin_id}&scale=32`}
+                          src={
+                            streamer.skin_id
+                              ? `https://s.namemc.com/2d/skin/face.png?id=${streamer.skin_id}&scale=32`
+                              : `https://crafatar.com/renders/head/${streamer.minecraft_uuid}?overlay`
+                          }
                           alt={`Skin de ${streamer.display_name}`}
-                          style={{
-                            imageRendering: "pixelated",
-                          }}
-                          className="h-10 w-10"
+                          className="h-12"
                         />
                         <span>{streamer.display_name}</span>
                       </Button>

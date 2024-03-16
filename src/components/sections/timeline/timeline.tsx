@@ -67,6 +67,7 @@ export function Timeline() {
                 <Accordion type="multiple">
                   {item.summaries.map((summary) => {
                     const streamer = getStreamer(summary.player);
+                    const skin_id = summary.skin_id || streamer?.skin_id;
 
                     return (
                       <AccordionItem
@@ -79,9 +80,11 @@ export function Timeline() {
                             <div className="flex items-center">
                               {/* eslint-disable-next-line @next/next/no-img-element */}
                               <img
-                                src={`https://s.namemc.com/2d/skin/face.png?id=${
-                                  summary.skin_id ?? streamer?.skin_id
-                                }&scale=32`}
+                                src={
+                                  skin_id
+                                    ? `https://s.namemc.com/2d/skin/face.png?id=${skin_id}&scale=32`
+                                    : `https://crafatar.com/avatars/${streamer?.minecraft_uuid}?overlay`
+                                }
                                 alt={`Skin de ${streamer?.display_name}`}
                                 style={{
                                   imageRendering: "pixelated",

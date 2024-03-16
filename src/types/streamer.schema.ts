@@ -3,7 +3,8 @@ import { z } from "zod";
 const streamerSchema = z.object({
   display_name: z.string(),
   avatar_url: z.string(),
-  skin_id: z.string(),
+  skin_id: z.string().optional(),
+  minecraft_uuid: z.string(),
   twitch_login: z.string().nullable(),
   twitter_login: z.string().nullable(),
   youtube_login: z.string().nullable(),
