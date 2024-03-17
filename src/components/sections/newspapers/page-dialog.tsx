@@ -26,6 +26,7 @@ const charactersNames = {
   tibba: "tiba041",
   ameizim: "ameizim",
   scott: "scottonauta",
+  abaddon: "scottonauta",
   rafly: "imrafly",
   pierre: "umildlive",
   umild: "umildlive",
