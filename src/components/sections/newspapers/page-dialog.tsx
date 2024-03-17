@@ -34,12 +34,14 @@ const charactersNames = {
   áries: "fehdubs",
   flopi: "flopi",
   carras: "carrasquera",
+  carrasquera: "carrasquera",
   ljoga: "ljoga",
   myn: "mynluvsx",
   dr_rodrigo: "umildlive",
   kaaory: "kaaory",
   febatista: "febatista",
   roberto: "umildlive",
+  keller: "kellerzons"
 };
 
 const transcriptVariants = cva(
