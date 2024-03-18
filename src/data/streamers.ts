@@ -215,7 +215,7 @@ export const STREAMERS: StreamerSchema[] = [
     minecraft_uuid: "58bc10e6-93b1-4b5a-b936-cf43248c7af2",
     twitch_login: "kaaory",
     twitter_login: "imkaory",
-    youtube_login: null,
+    youtube_login: "livesdakaory",
     characters: [
       {
         name: "Kaory",
