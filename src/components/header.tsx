@@ -1,6 +1,5 @@
 import { ExternalLink } from "lucide-react";
-import Link from "next/link";
-import { Button } from "./ui/button";
+import { HeaderLink, HeaderLinks } from "./animations/header-links";
 
 /* eslint-disable @next/next/no-img-element */
 export function Header() {
@@ -17,34 +16,18 @@ export function Header() {
           alt="FroggSMP"
           className="h-10 hidden sm:block"
         />
-        <nav className="flex flex-wrap justify-center md:justify-end md:max-w-[65%]">
-          <Button size="sm" variant="link" asChild>
-            <Link href="#lives">Lives</Link>
-          </Button>
-          <Button size="sm" variant="link" asChild>
-            <Link href="#participantes">Participantes</Link>
-          </Button>
-          <Button size="sm" variant="link" asChild>
-            <Link href="#eventos">Eventos</Link>
-          </Button>
-          <Button size="sm" variant="link" asChild>
-            <Link href="#atualizacoes">Atualizações</Link>
-          </Button>
-          <Button size="sm" variant="link" asChild>
-            <Link href="#correio">Correio Froggiano</Link>
-          </Button>
-          <Button size="sm" variant="link" asChild>
-            <Link href="#linha-do-tempo">Linha do Tempo</Link>
-          </Button>
-          <Button size="sm" variant="link" asChild>
-            <Link href="#assistir">VODs</Link>
-          </Button>
-          <Button size="sm" variant="link" asChild>
-            <Link href="https://multifrogg.vercel.app" target="_blank">
-              MultiFrogg <ExternalLink size="0.75rem" className="ml-2" />
-            </Link>
-          </Button>
-        </nav>
+        <HeaderLinks>
+          <HeaderLink href="#lives">Lives</HeaderLink>
+          <HeaderLink href="#participantes">Participantes</HeaderLink>
+          <HeaderLink href="#eventos">Eventos</HeaderLink>
+          <HeaderLink href="#atualizacoes">Atualizações</HeaderLink>
+          <HeaderLink href="#correio">Correio Froggiano</HeaderLink>
+          <HeaderLink href="#linha-do-tempo">Linha do Tempo</HeaderLink>
+          <HeaderLink href="#assistir">VODs</HeaderLink>
+          <HeaderLink href="https://multifrogg.vercel.app" target="_blank">
+            MultiFrogg <ExternalLink size="0.75rem" className="ml-2" />
+          </HeaderLink>
+        </HeaderLinks>
       </header>
     </>
   );

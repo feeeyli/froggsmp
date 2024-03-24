@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { Typing } from "@/components/animations/typing";
 import { Button } from "@/components/ui/button";
 import { StreamSchema } from "@/types/stream.schema";
 import { ExternalLink } from "lucide-react";
@@ -19,17 +20,16 @@ type StreamsProps = {
 export function Streams(props: StreamsProps) {
   return (
     <section className="px-4 sm:px-8 md:px-20 lg:px-40 py-8 flex flex-col gap-6">
-      <div className="flex items-center justify-between">
-        <h2 className="text-3xl font-semibold" id="lives">
+      <div className="flex flex-col items-start sm:flex-row sm:items-center sm:justify-between">
+        <Typing as="h2" className="text-3xl font-semibold" id="lives">
           Streamers em live
-        </h2>
-        <time className="text-2xl font-semibold">
-          Dia{" "}
-          {Math.ceil(
+        </Typing>
+        <Typing as="span" className="text-2xl font-semibold">
+          {`Dia ${Math.ceil(
             (new Date().getTime() - new Date("2024-01-08 00:00").getTime()) /
               (1000 * 60 * 60 * 24)
-          )}
-        </time>
+          )}`}
+        </Typing>
       </div>
       <Carousel>
         <CarouselContent>

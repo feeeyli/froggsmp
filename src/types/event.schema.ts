@@ -5,7 +5,7 @@ const announcementSchema = z.object({
   pictures: z.array(z.string()),
   publisher: z.string(),
   text: z.string(),
-  id: z.string(),
+  // id: z.string(),
   thread: z.boolean(),
 });
 

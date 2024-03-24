@@ -12,6 +12,7 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Toggle } from "@/components/ui/toggle";
 import { NewspaperSchema } from "@/types/newspaper.schema";
 import { cva } from "class-variance-authority";
+import { motion } from "framer-motion";
 import { Newspaper } from "lucide-react";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
@@ -85,7 +86,7 @@ export function PageDialog(props: PageDialogProps) {
         setShowTranscript([]);
       }}
     >
-      <DialogContent className="max-w-none h-[80%] sm:h-auto md:h-[80%] lg:h-[90%] xl:h-[95%] aspect-[1414/2000] sm:aspect-[2828/2000] sm:w-[90%] md:w-auto bg-transparent border-0 p-0 overflow-hidden overflow-y-auto scrollbar">
+      <DialogContent className="max-w-none h-[80%] sm:h-auto md:h-[80%] lg:h-[90%] xl:h-[95%] aspect-[1414/2000] sm:aspect-[2828/2000] sm:w-[90%] md:w-auto bg-transparent border-0 p-0 scrollbar">
         <Carousel
           className="w-full cursor-move active:cursor-grabbing group"
           data-invert-bg
@@ -143,15 +144,44 @@ export function PageDialog(props: PageDialogProps) {
                       pressed ? [...old, i] : old.filter((n) => n !== i)
                     )
                   }
-                  className="absolute left-2 bottom-2 bg-background text-secondary-foreground hover:bg-background/80 h-auto p-2 hover:text-foreground"
+                  className="absolute left-2 bottom-2 bg-background justify-start text-secondary-foreground hover:bg-background/80 h-9 p-2 pl-0 hover:text-foreground overflow-hidden gap-2"
+                  asChild
                 >
-                  <Newspaper size="1rem" />
+                  <motion.button
+                    initial={{
+                      width: "16rem",
+                    }}
+                    animate={{
+                      width: "2.25rem",
+                    }}
+                    transition={{
+                      delay: 2.5,
+                      ease: "easeInOut",
+                    }}
+                  >
+                    <div className="min-w-[2.25rem] min-h-[2.25rem] flex items-center justify-center">
+                      <Newspaper size="1rem" className="min-w-[1rem]" />
+                    </div>
+                    <motion.span
+                      animate={{
+                        opacity: 0,
+                      }}
+                      style={{
+                        textWrap: "nowrap",
+                      }}
+                      transition={{
+                        delay: 2.5,
+                      }}
+                    >
+                      Clique para ler a transcrição
+                    </motion.span>
+                  </motion.button>
                 </Toggle>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselNext className="right-2 disabled:hidden sm:hidden" />
-          <CarouselPrevious className="left-2 disabled:hidden sm:hidden" />
+          <CarouselNext className="right-2 disabled:hidden sm:-right-10" />
+          <CarouselPrevious className="left-2 disabled:hidden sm:-left-10" />
         </Carousel>
       </DialogContent>
     </Dialog>

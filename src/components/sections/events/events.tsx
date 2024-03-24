@@ -1,7 +1,6 @@
-import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Typing } from "@/components/animations/typing";
+import { Timeline } from "@/components/timeline";
 import { EventSchema } from "@/types/event.schema";
-import { Clock } from "lucide-react";
 import { Suspense } from "react";
 import { Event } from "./event";
 import { NextEventCountdown } from "./next-event-countdown";
@@ -25,15 +24,20 @@ export function Events(props: EventsProps) {
 
   return (
     <section className="py-8 px-4 sm:px-8 md:px-20 lg:px-40 flex flex-col gap-6 justify-center">
-      <h2 className="text-3xl font-semibold" id="eventos">
+      <Typing as="h2" className="text-3xl font-semibold" id="eventos">
         Eventos
-      </h2>
+      </Typing>
       {hasFuture && (
         <Suspense>
           <NextEventCountdown event={props.events[0]} />
         </Suspense>
       )}
-      <Tabs defaultValue={props.events[0].slug} className="w-full">
+      <Timeline>
+        {props.events.map((event, i) => {
+          return <Event key={event.name} event={event} index={i} />;
+        })}
+      </Timeline>
+      {/* <Tabs defaultValue={props.events[0].slug} className="w-full">
         <TabsList className="bg-primary/10 gap-1 flex-wrap h-auto w-full">
           {props.events.map((event, index) => {
             const hasPassed = new Date(event.time).getTime() < Date.now();
@@ -65,7 +69,7 @@ export function Events(props: EventsProps) {
         {props.events.map((event) => (
           <Event key={event.name} event={event} />
         ))}
-      </Tabs>
+      </Tabs> */}
     </section>
   );
 }

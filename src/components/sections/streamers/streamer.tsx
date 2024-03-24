@@ -1,3 +1,5 @@
+"use client";
+
 /* eslint-disable @next/next/no-img-element */
 import {
   Popover,
@@ -5,6 +7,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { StreamerSchema } from "@/types/streamer.schema";
+import { motion } from "framer-motion";
 import { BookOpenText, Radio } from "lucide-react";
 import Link from "next/link";
 import { Button } from "../../ui/button";
@@ -13,12 +16,31 @@ type StreamerProps = {
   streamer: StreamerSchema & {
     is_live: boolean;
   };
+  index: number;
 };
 
 export function Streamer(props: StreamerProps) {
   return (
-    <article
-      className="flex flex-col relative"
+    <motion.article
+      initial="hidden"
+      viewport={{ once: true }}
+      whileInView="show"
+      whileHover="hover"
+      variants={{
+        hidden: { y: 20, opacity: 0 },
+        show: (index: number) => ({
+          y: 0,
+          opacity: 1,
+          transition: { type: "spring", delay: 0.025 * index },
+        }),
+        hover: {
+          scale: 1.05,
+          rotateZ: -3,
+          zIndex: 15,
+        },
+      }}
+      custom={props.index}
+      className="flex flex-col relative group/item"
       id={props.streamer.twitch_login ?? props.streamer.display_name}
     >
       {props.streamer.is_live && (
@@ -26,13 +48,13 @@ export function Streamer(props: StreamerProps) {
           <Radio size="1.25rem" />
         </span>
       )}
-      <picture className="relative md:h-52 md:w-52 h-36 w-36 group">
+      <picture className="relative md:h-52 md:w-52 h-36 w-36">
         <img
           src={props.streamer.avatar_url}
           alt={`Imagem de ${props.streamer.display_name}`}
           className="md:h-52 md:w-52 h-36 w-36 rounded-md"
         />
-        <div className="absolute bottom-2 right-2 w-12 md:group-hover:w-20 aspect-[120/111] transition-all">
+        <div className="absolute bottom-2 right-2 w-12 md:group-hover/item:w-20 aspect-[120/111] transition-all">
           <img
             src={
               props.streamer.skin_id
@@ -52,7 +74,7 @@ export function Streamer(props: StreamerProps) {
                 : `https://crafatar.com/renders/head/${props.streamer.minecraft_uuid}?overlay`
             }
             alt={`Skin de ${props.streamer.display_name}`}
-            className="absolute scale-[1.15] md:group-hover:scale-110 transition-transform inset-0 brightness-0 invert"
+            className="absolute scale-[1.15] md:group-hover/item:scale-110 transition-transform inset-0 brightness-0 invert"
           />
         </div>
       </picture>
@@ -190,6 +212,6 @@ export function Streamer(props: StreamerProps) {
           </Button>
         </div>
       </footer>
-    </article>
+    </motion.article>
   );
 }

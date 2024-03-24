@@ -10,9 +10,11 @@ import {
   PaginationItem,
   PaginationLink,
 } from "@/components/ui/pagination";
+import { EVENTS } from "@/data/events";
 import { STREAMERS } from "@/data/streamers";
 import { VodSchema } from "@/types/vod.schema";
 import { format } from "date-fns";
+import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { useEffect, useState } from "react";
 import { DayContent, DayContentProps } from "react-day-picker";
@@ -22,37 +24,6 @@ import { VodPlayer } from "./vod-player";
 function getStreamer(twitch_login: string) {
   return STREAMERS.find((streamer) => streamer.twitch_login === twitch_login);
 }
-
-const Events = {
-  julgamento: {
-    name: "Julgamento",
-    emoji: "⚖️",
-  },
-  "episodio-de-praia": {
-    name: "Episódio de Praia",
-    emoji: "🏖️",
-  },
-  "a-fuga": {
-    name: "A Fuga",
-    emoji: "⛓️",
-  },
-  "valentines-day": {
-    name: "Valentine's Day",
-    emoji: "💘",
-  },
-  "zoologico-frogg": {
-    name: "Zoologico Frogg",
-    emoji: "🦒",
-  },
-  "a-missa": {
-    name: "A Missa",
-    emoji: "🙏",
-  },
-  "o-milagre": {
-    name: "O Milagre",
-    emoji: "😇",
-  },
-} as const;
 
 function DateTime(
   props: DayContentProps & { vods: VodSchema[]; showServerDay: boolean }
@@ -64,7 +35,7 @@ function DateTime(
 
   return (
     <time dateTime={dateTime}>
-      {day?.events[0] && Events[day.events[0] as keyof typeof Events].emoji}
+      {day?.events[0] && EVENTS[day.events[0] as keyof typeof EVENTS].emoji}
       {!day?.events[0] && (
         <>
           {!props.showServerDay && <DayContent {...props} />}
@@ -179,7 +150,7 @@ export function VodSelector(props: VodSelectorProps) {
                 <br />
                 <span className="relative text-primary before:bg-primary/5 before:px-4 before:absolute before:-inset-x-6 before:bottom-0 before:top-[50%] z-10 before:-z-10">
                   {selectedDay.events
-                    .map((event) => Events[event as keyof typeof Events].name)
+                    .map((event) => EVENTS[event as keyof typeof EVENTS].name)
                     .join(" / ")}
                 </span>
               </>
@@ -188,33 +159,41 @@ export function VodSelector(props: VodSelectorProps) {
           {!vod && (
             <>
               <ul className="flex flex-wrap max-w-md justify-center gap-2">
-                {selectedDay.vods.map((vod) => {
-                  const streamer = getStreamer(vod.streamer);
+                <AnimatePresence>
+                  {selectedDay.vods.map((vod, i) => {
+                    const streamer = getStreamer(vod.streamer);
 
-                  if (!streamer) return null;
+                    if (!streamer) return null;
 
-                  return (
-                    <li key={vod.streamer} className="flex">
-                      <Button
-                        variant="link"
-                        size="sm"
-                        className="h-auto flex-col text-foreground gap-1 py-2 px-2"
-                        onClick={() => setVod(vod.streamer)}
+                    return (
+                      <motion.li
+                        key={vod.vods[0]}
+                        className="flex"
+                        // layout //Id={vod.streamer}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
                       >
-                        <img
-                          src={
-                            streamer.skin_id
-                              ? `https://s.namemc.com/2d/skin/face.png?id=${streamer.skin_id}&scale=32`
-                              : `https://crafatar.com/renders/head/${streamer.minecraft_uuid}?overlay`
-                          }
-                          alt={`Skin de ${streamer.display_name}`}
-                          className="h-12"
-                        />
-                        <span>{streamer.display_name}</span>
-                      </Button>
-                    </li>
-                  );
-                })}
+                        <Button
+                          variant="link"
+                          size="sm"
+                          className="h-auto flex-col text-foreground gap-1 py-2 px-2"
+                          onClick={() => setVod(vod.streamer)}
+                        >
+                          <img
+                            src={
+                              streamer.skin_id
+                                ? `https://s.namemc.com/2d/skin/face.png?id=${streamer.skin_id}&scale=32`
+                                : `https://crafatar.com/renders/head/${streamer.minecraft_uuid}?overlay`
+                            }
+                            alt={`Skin de ${streamer.display_name}`}
+                            className="h-12"
+                          />
+                          <span>{streamer.display_name}</span>
+                        </Button>
+                      </motion.li>
+                    );
+                  })}
+                </AnimatePresence>
               </ul>
               <p className="text-sm opacity-80">
                 Clique em um streamer para assistir ao VOD

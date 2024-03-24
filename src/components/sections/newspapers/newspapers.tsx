@@ -1,3 +1,4 @@
+import { Typing } from "@/components/animations/typing";
 import {
   Carousel,
   CarouselContent,
@@ -17,19 +18,22 @@ type NewspapersProps = {
 export function Newspapers(props: NewspapersProps) {
   return (
     <section className="py-8 px-4 sm:px-8 md:px-20 lg:px-40 flex flex-col gap-6">
-      <h2
-        className="text-3xl font-semibold flex items-center gap-x-6 gap-y-3 flex-wrap"
-        id="correio"
-      >
-        Correio Froggiano{" "}
+      <div className="flex flex-col items-start">
+        <Typing
+          as="h2"
+          className="text-3xl font-semibold flex items-center gap-x-6 gap-y-3 flex-wrap"
+          id="correio"
+        >
+          Correio Froggiano
+        </Typing>
         <Link
           href="https://twitter.com/froggsmpnots"
           target="_blank"
           className="text-primary text-base hover:underline"
         >
-          por @froggsmpnots
+          <Typing as="span">por @froggsmpnots</Typing>
         </Link>
-      </h2>
+      </div>
       <Carousel
         className="w-full cursor-move active:cursor-grabbing group"
         data-invert-bg
@@ -39,7 +43,7 @@ export function Newspapers(props: NewspapersProps) {
         }}
       >
         <CarouselContent>
-          {props.newspapers.map((up) => (
+          {props.newspapers.map((up, i) => (
             <Newspaper key={up.edition} newspaper={up} />
           ))}
         </CarouselContent>

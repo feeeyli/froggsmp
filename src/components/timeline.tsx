@@ -18,11 +18,17 @@ const TimelineItemIndicator = (props: TimelineItemIndicatorProps) => {
   return (
     <div
       {...props}
-      className={cn("flex flex-col items-center gap-1.5", props.className)}
+      className={cn(
+        "grid grid-rows-[1.25rem_0.75rem_1fr] md:grid-rows-[0.5rem_0.75rem_1fr] gap-1.5 items-center justify-center",
+        props.className
+      )}
     >
-      <span className="w-0.5 h-5 md:h-2 bg-border"></span>
-      <span className="w-full aspect-square rounded-full bg-background border-[3px] border-primary"></span>
-      <span className="w-0.5 flex-1 bg-border"></span>
+      <span className="w-0.5 h-full bg-border mx-auto"></span>
+      {!props.children && (
+        <span className="w-3 aspect-square rounded-full bg-background border-[3px] border-primary"></span>
+      )}
+      {props.children}
+      <span className="w-0.5 h-full bg-border mx-auto"></span>
     </div>
   );
 };

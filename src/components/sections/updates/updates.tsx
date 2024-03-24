@@ -1,3 +1,4 @@
+import { Typing } from "@/components/animations/typing";
 import {
   Carousel,
   CarouselContent,
@@ -15,19 +16,22 @@ type UpdatesProps = {
 export function Updates(props: UpdatesProps) {
   return (
     <section className="py-8 px-4 sm:px-8 md:px-20 lg:px-40 flex flex-col gap-6">
-      <h2
-        className="text-3xl font-semibold flex items-center gap-x-6 gap-y-3 flex-wrap"
-        id="atualizacoes"
-      >
-        Atualizações diárias{" "}
+      <div className="flex flex-col items-start">
+        <Typing
+          as="h2"
+          className="text-3xl font-semibold flex items-center gap-x-6 gap-y-3 flex-wrap"
+          id="atualizacoes"
+        >
+          Atualizações diárias
+        </Typing>
         <Link
           href="https://twitter.com/froggsmpnots"
           target="_blank"
           className="text-primary text-base hover:underline"
         >
-          por @froggsmpnots
+          <Typing as="span">por @froggsmpnots</Typing>
         </Link>
-      </h2>
+      </div>
       <Carousel
         className="w-full cursor-move active:cursor-grabbing group"
         data-invert-bg
@@ -37,14 +41,20 @@ export function Updates(props: UpdatesProps) {
         }}
       >
         <CarouselContent>
-          {props.updates.map((up) => (
+          {props.updates.map((up, i) => (
             <Announcement
-              key={up.pictures[0]}
+              key={up.date}
               announcement={{
                 publisher: "FroggUpdates",
                 thread: true,
+                pictures: [up.picture],
+                text: `🔔| FROGG SMP ATUALIZAÇÃO\n\`DIA ${up.date
+                  .split("-")
+                  .reverse()
+                  .join(".")}\`\n\n*#FroggSMP* *#FSMP*`,
                 ...up,
               }}
+              index={i}
             >
               <span className="text-center block mb-2 text-lg">
                 {new Date(up.date + " 00:00:00").toLocaleString("pt-BR", {
