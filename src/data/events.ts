@@ -27,4 +27,8 @@ export const EVENTS = {
     name: "O Milagre",
     emoji: "😇",
   },
+  "primeiro-de-abril": {
+    name: "Primeiro de Abril",
+    emoji: "😋",
+  },
 } as const;
