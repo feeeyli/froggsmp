@@ -25,7 +25,7 @@ const publishers = {
   FroggUpdates() {
     return {
       picture:
-        "https://pbs.twimg.com/profile_images/1753900367815880704/masaNemY_400x400.jpg",
+        "https://pbs.twimg.com/profile_images/1774993265051291648/WeIs6Fr2_400x400.jpg",
       name: "Frogg SMP Updates",
       username: "froggsmpnots",
     };
