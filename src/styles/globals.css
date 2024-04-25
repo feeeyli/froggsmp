@@ -174,15 +174,15 @@
   }
 
   .scrollbar::-webkit-scrollbar-track {
-    @apply rounded-full bg-muted;
+    @apply rounded-full bg-muted/20;
   }
 
   .scrollbar::-webkit-scrollbar-thumb {
-    @apply rounded-full bg-primary;
+    @apply rounded-full bg-primary/60 cursor-pointer;
   }
 
   .scrollbar::-webkit-scrollbar-thumb:hover {
-    @apply bg-primary/80;
+    @apply bg-primary/40;
   }
 
   .scrollbar-book::-webkit-scrollbar {
@@ -199,6 +199,12 @@
 
   .scrollbar-book::-webkit-scrollbar-thumb:hover {
     @apply bg-red-700/80;
+  }
+
+  /*  */
+
+  .scrollbar-wiki::-webkit-scrollbar {
+    @apply h-5 w-1;
   }
 }
 

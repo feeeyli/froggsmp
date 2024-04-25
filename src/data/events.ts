@@ -12,11 +12,11 @@ export const EVENTS = {
     emoji: "⛓️",
   },
   "valentines-day": {
-    name: "Valentine's Day",
+    name: "Dia dos Namorados",
     emoji: "💘",
   },
   "zoologico-frogg": {
-    name: "Zoologico Frogg",
+    name: "Zoológico FROGG",
     emoji: "🦒",
   },
   "a-missa": {

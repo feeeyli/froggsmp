@@ -1,4 +1,3 @@
-import { ExternalLink } from "lucide-react";
 import { HeaderLink, HeaderLinks } from "./animations/header-links";
 
 /* eslint-disable @next/next/no-img-element */
@@ -22,11 +21,11 @@ export function Header() {
           <HeaderLink href="#eventos">Eventos</HeaderLink>
           <HeaderLink href="#atualizacoes">Atualizações</HeaderLink>
           <HeaderLink href="#correio">Correio Froggiano</HeaderLink>
-          <HeaderLink href="#linha-do-tempo">Linha do Tempo</HeaderLink>
+          <HeaderLink href="#wiki">Wiki</HeaderLink>
           <HeaderLink href="#assistir">VODs</HeaderLink>
-          <HeaderLink href="https://multifrogg.vercel.app" target="_blank">
+          {/* <HeaderLink href="https://multifrogg.vercel.app" target="_blank">
             MultiFrogg <ExternalLink size="0.75rem" className="ml-2" />
-          </HeaderLink>
+          </HeaderLink> */}
         </HeaderLinks>
       </header>
     </>
