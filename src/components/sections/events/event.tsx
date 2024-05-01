@@ -18,11 +18,12 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { Badge } from "@/components/ui/badge";
 import { EVENTS } from "@/data/events";
 import { FADE_LEFT_ANIMATION_VARIANTS } from "@/styles/animations";
 import { EventSchema } from "@/types/event.schema";
 import { motion } from "framer-motion";
-import { Badge, Clock } from "lucide-react";
+import { Clock } from "lucide-react";
 import { Announcement } from "./announcement";
 import { WatchEvent } from "./watch-event";
 
@@ -48,7 +49,7 @@ export function Event({ event, index: i }: EventProps) {
       viewport={{ once: true }}
       variants={FADE_LEFT_ANIMATION_VARIANTS}
     >
-      <TimelineItem>
+      <TimelineItem className="grid-cols-[3.5rem_0.75rem_1fr]">
         <TimelineItemName className="relative">
           <span>Dia {getServerDay(new Date(event.time))}</span>
           <span className="text-sm text-muted-foreground text-right">
