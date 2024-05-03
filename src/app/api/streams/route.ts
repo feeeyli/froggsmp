@@ -8,18 +8,22 @@ const STREAMERS = [
   "kellerzons",
   "oakinoo",
   "ameizim",
+  "ameliebluie",
   "bastet",
   "carrasquera",
   "dreasbro",
   "febatista",
   "fehdubs",
-  "imrafly",
+  "oflopi",
+  "guaxinim",
   "jinkiwinkki",
   "kaaory",
   "kojjlul",
   "ljoga",
   "mynluvsx",
-  "oflopi",
+  "imrafly",
+  "yuiboboca",
+  "yuyusaz"
 ];
 
 type TwitchResponse = {
