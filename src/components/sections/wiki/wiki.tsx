@@ -44,22 +44,26 @@ export function Wiki(props: UpdatesProps) {
             <TreeSubItems className="scrollbar scrollbar-wiki max-h-64 overflow-y-auto pr-2 w-full">
               <TreeSubItem href="/wiki/Akino">Akino</TreeSubItem>
               <TreeSubItem href="/wiki/Ameizim">Ameizim</TreeSubItem>
+              <TreeSubItem href="/wiki/Amelie">Amelie</TreeSubItem>
               <TreeSubItem href="/wiki/Áries">Áries</TreeSubItem>
               <TreeSubItem href="/wiki/Bastet">Bastet</TreeSubItem>
               <TreeSubItem href="/wiki/Carrasquera">Carras</TreeSubItem>
               <TreeSubItem href="/wiki/Dreasbro">Dreas</TreeSubItem>
               <TreeSubItem href="/wiki/Febatista">Febatista</TreeSubItem>
               <TreeSubItem href="/wiki/Flopi">Flopi</TreeSubItem>
+              <TreeSubItem href="/wiki/Guaxinim">Guaxinim</TreeSubItem>
               <TreeSubItem href="/wiki/Jinkiwinkki">Jinki</TreeSubItem>
               <TreeSubItem href="/wiki/Kaory">Kaory</TreeSubItem>
               <TreeSubItem href="/wiki/Kellerzons">Keller</TreeSubItem>
               <TreeSubItem href="/wiki/Kojj">Kojj</TreeSubItem>
               <TreeSubItem href="/wiki/LJoga">LJoga</TreeSubItem>
+              <TreeSubItem href="/wiki/MiiReis">Mii Reis</TreeSubItem>
               <TreeSubItem href="/wiki/Mynzinha">Myn</TreeSubItem>
               <TreeSubItem href="/wiki/Rafly">Rafly</TreeSubItem>
               <TreeSubItem href="/wiki/Scott">Scott</TreeSubItem>
               <TreeSubItem href="/wiki/Tiba">Tiba</TreeSubItem>
               <TreeSubItem href="/wiki/Umild">Umild</TreeSubItem>
+              <TreeSubItem href="/wiki/Yui">Yui</TreeSubItem>
               <TreeSubItem href="/wiki/Yumithra">Yumi</TreeSubItem>
             </TreeSubItems>
           </TreeItem>
