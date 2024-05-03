@@ -109,6 +109,15 @@ export const STREAMERS: StreamerSchema[] = [
     ],
   },
   {
+    display_name: "Amelie",
+    avatar_url: "https://static-cdn.jtvnw.net/jtv_user_pictures/c6b18c74-54c8-42bc-85e0-ca199397acaf-profile_image-300x300.png",
+    minecraft_uuid: "28f2c431-9218-4420-a6f2-3ee5668009af",
+    twitch_login: "ameliebluie",
+    twitter_login: "amelieBluie",
+    youtube_login: "ameliebluie",
+    characters: [],
+  },
+  {
     display_name: "Bastet",
     avatar_url:
       "https://static-cdn.jtvnw.net/jtv_user_pictures/fee53afc-157d-412e-8761-6f2f3dd741ef-profile_image-300x300.png",
@@ -199,6 +208,15 @@ export const STREAMERS: StreamerSchema[] = [
     ],
   },
   {
+    display_name: "Guaxinim",
+    avatar_url: "https://static-cdn.jtvnw.net/jtv_user_pictures/3a88fb53-3d0b-45f5-8658-6bb6b49575d4-profile_image-300x300.png",
+    minecraft_uuid: "95ec17d2-9793-46d1-91f3-9a948cf049ff",
+    twitch_login: "guaxinim",
+    twitter_login: "GuaxinimGamer",
+    youtube_login: "GuaxinimLives",
+    characters: [],
+  },
+  {
     display_name: "Jinki",
     avatar_url:
       "https://static-cdn.jtvnw.net/jtv_user_pictures/e08bd224-64d0-4f1f-8473-1ff7b1dcf195-profile_image-300x300.png",
@@ -263,6 +281,15 @@ export const STREAMERS: StreamerSchema[] = [
     ],
   },
   {
+    display_name: "Mii Reis",
+    avatar_url: "https://yt3.googleusercontent.com/GQxO4T8NxrFomToU_u-zy3VSdAi7MueSWWyi9N_lakRVCQVyJloAAZrr4oec9Fr2I7XH5q02=s176-c-k-c0x00ffffff-no-rj",
+    minecraft_uuid: "bad7660b-4506-4f58-9392-d46582c194c4",
+    twitch_login: null,
+    twitter_login: "YasmimReisOFC",
+    youtube_login: "Mii_Reis",
+    characters: [],
+  },
+  {
     display_name: "Myn",
     avatar_url:
       "https://static-cdn.jtvnw.net/jtv_user_pictures/7cee8027-2e00-4c58-924f-7bc30bf90e0c-profile_image-300x300.png",
@@ -291,6 +318,15 @@ export const STREAMERS: StreamerSchema[] = [
         wiki_url: "https://frogg-smp.fandom.com/pt-br/wiki/Rafly",
       },
     ],
+  },
+  {
+    display_name: "Yui",
+    avatar_url: "https://static-cdn.jtvnw.net/jtv_user_pictures/dd054b79-a741-484f-be2c-5ad2f0247c66-profile_image-300x300.png",
+    minecraft_uuid: "6f1dca58-669d-4623-950f-7f38308223af",
+    twitch_login: "yuiboboca",
+    twitter_login: "yuiboboca",
+    youtube_login: "yuiboboca",
+    characters: [],
   },
   {
     display_name: "Yumi",
