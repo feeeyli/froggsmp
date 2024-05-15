@@ -25,7 +25,7 @@ export const STREAMERS: StreamerSchema[] = [
   {
     display_name: "Umild",
     avatar_url:
-      "https://static-cdn.jtvnw.net/jtv_user_pictures/fa41da80-e980-4bb6-a580-bd6ea487b14f-profile_image-300x300.png",
+      "https://static-cdn.jtvnw.net/jtv_user_pictures/cb0289db-d3f2-4b0e-8f3f-9f52e9477117-profile_image-300x300.png",
     minecraft_uuid: "f6a94a1e-9fc9-42b0-bc87-0ac8f4866590",
     twitch_login: "umildlive",
     twitter_login: "UmildCDU",
@@ -81,7 +81,7 @@ export const STREAMERS: StreamerSchema[] = [
   {
     display_name: "Akino",
     avatar_url:
-      "https://static-cdn.jtvnw.net/jtv_user_pictures/441d9598-0dc8-4dc9-bad0-e5b03e017ffb-profile_image-300x300.png",
+      "https://static-cdn.jtvnw.net/jtv_user_pictures/6ccadfa1-1dc5-481d-985f-ec1c20a021b2-profile_image-300x300.png",
     minecraft_uuid: "87720615-8a89-41af-9434-f32aa0416b86",
     twitch_login: "oakinoo",
     twitter_login: "oAkinooo",
@@ -234,7 +234,7 @@ export const STREAMERS: StreamerSchema[] = [
   {
     display_name: "Kaory",
     avatar_url:
-      "https://static-cdn.jtvnw.net/jtv_user_pictures/4faa84a8-2b12-4123-9b0e-61d471cacf8b-profile_image-300x300.png",
+      "https://static-cdn.jtvnw.net/jtv_user_pictures/91d2508d-d3b4-426a-9272-accd4698ad53-profile_image-300x300.png",
     minecraft_uuid: "58bc10e6-93b1-4b5a-b936-cf43248c7af2",
     twitch_login: "kaaory",
     twitter_login: "imkaory",
@@ -249,7 +249,7 @@ export const STREAMERS: StreamerSchema[] = [
   {
     display_name: "Kojj",
     avatar_url:
-      "https://static-cdn.jtvnw.net/jtv_user_pictures/031207fe-1ebb-4d1f-b406-27553e0ecb83-profile_image-300x300.png",
+      "https://static-cdn.jtvnw.net/jtv_user_pictures/1ffb6086-5867-4e1c-8c30-1f6fc1b27600-profile_image-300x300.png",
     minecraft_uuid: "46b47da6-fd09-4be9-beba-d64717eadb7f",
     twitch_login: "kojjlul",
     twitter_login: "Kojjlul",
@@ -292,7 +292,7 @@ export const STREAMERS: StreamerSchema[] = [
   {
     display_name: "Myn",
     avatar_url:
-      "https://static-cdn.jtvnw.net/jtv_user_pictures/7cee8027-2e00-4c58-924f-7bc30bf90e0c-profile_image-300x300.png",
+      "https://static-cdn.jtvnw.net/jtv_user_pictures/931bb8da-995f-4e10-a2c1-2591b1283164-profile_image-300x300.png",
     minecraft_uuid: "79c29788-6a07-440e-95ce-ccc63a0644f6",
     twitch_login: "mynluvsx",
     twitter_login: "mynluvsx",
@@ -307,7 +307,7 @@ export const STREAMERS: StreamerSchema[] = [
   {
     display_name: "Rafly",
     avatar_url:
-      "https://static-cdn.jtvnw.net/jtv_user_pictures/41d41923-67ac-4498-9df5-e4d38f46f96f-profile_image-300x300.png",
+      "https://static-cdn.jtvnw.net/jtv_user_pictures/87229533-a7b8-4303-8894-632803a9cff2-profile_image-300x300.png",
     minecraft_uuid: "aab947c7-307a-4171-9f98-19ef68379c49",
     twitch_login: "imrafly",
     twitter_login: "imraflying",
