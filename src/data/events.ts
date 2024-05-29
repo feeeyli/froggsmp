@@ -35,4 +35,8 @@ export const EVENTS = {
     name: "A Chegada",
     emoji: "✈️",
   },
+  "acampamento": {
+    name: "Acampamento",
+    emoji: "🏕️",
+  },
 } as const;
