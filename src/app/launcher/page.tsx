@@ -10,12 +10,43 @@ type LauncherProps = {
   };
 };
 
-export default function Launcher(props: LauncherProps) {
+export default async function Launcher(props: LauncherProps) {
   const key = props.searchParams.k || props.searchParams.$frogg;
   if (key !== process.env.NEXT_PUBLIC_LAUNCHER_KEY) {
     redirect("/");
   }
   const admin = !!props.searchParams.$frogg;
+  const data = await fetch(process.env.NEXT_PUBLIC_LAUNCHER_HYGRAPH_ENDPOINT!, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      query: `
+          query Releases {
+            releases(last: 2, orderBy: version_DESC) {
+              version
+              downloadUrl
+              admin
+            }
+          }        
+          `,
+    }),
+    next: { revalidate: 3600 },
+  });
+  const releases = (await data.json()).data.releases as {
+    version: number;
+    downloadUrl: string;
+    admin: boolean;
+  }[];
+  const urls = releases.reduce((acc, item) => {
+    if (item.admin) {
+      acc.admin = item.downloadUrl;
+    } else {
+      acc.default = item.downloadUrl;
+    }
+    return acc;
+  }, {} as { admin: string; default: string });
 
   return (
     <main className="dark bg-background h-screen w-screen flex flex-col justify-between items-center select-none">
@@ -26,10 +57,7 @@ export default function Launcher(props: LauncherProps) {
           variant="ghost"
           asChild
         >
-          <a
-            href="https://drive.google.com/file/d/1BiKCF6xkLvEGw4FEpEYSIU-pZuRnL6ne/view"
-            target="_blank"
-          >
+          <a href={urls.default} target="_blank">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/frogg-logo.png"
@@ -50,14 +78,7 @@ export default function Launcher(props: LauncherProps) {
             variant="ghost"
             asChild
           >
-            <a
-              href={
-                admin
-                  ? "https://drive.google.com/file/d/14-cvPW2fhY9RbEmhxnxiCpqokhGOy3iH/view"
-                  : "#"
-              }
-              target="_blank"
-            >
+            <a href={admin ? urls.admin : "#"} target="_blank">
               <div className="relative">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -86,7 +107,7 @@ export default function Launcher(props: LauncherProps) {
         </div>
       </div>
       <footer className="text-foreground mb-2 opacity-60">
-        Ultima versão: v1.0
+        Ultima versão: v{releases[0].version.toFixed(1)}
       </footer>
     </main>
   );
