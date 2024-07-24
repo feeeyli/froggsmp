@@ -1,23 +1,21 @@
-"use client";
-
 import { Button } from "@/components/ui/button";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import { Download, Shield } from "lucide-react";
-import { redirect, useRouter, useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { cn } from "@/lib/utils";
+import { Download, Lock, Shield } from "lucide-react";
+import { redirect } from "next/navigation";
 
-export default function Launcher() {
-  const searchParams = useSearchParams();
-  if (searchParams.get("k") !== process.env.NEXT_PUBLIC_LAUNCHER_KEY) {
+type LauncherProps = {
+  searchParams: {
+    k?: string;
+    $frogg?: string;
+  };
+};
+
+export default function Launcher(props: LauncherProps) {
+  const key = props.searchParams.k || props.searchParams.$frogg;
+  if (key !== process.env.NEXT_PUBLIC_LAUNCHER_KEY) {
     redirect("/");
   }
-
-  const router = useRouter();
-  const [password, setPassword] = useState("");
+  const admin = !!props.searchParams.$frogg;
 
   return (
     <main className="dark bg-background h-screen w-screen flex flex-col justify-between items-center select-none">
@@ -26,28 +24,39 @@ export default function Launcher() {
         <Button
           className="h-auto py-4 bg-primary/10 !text-foreground flex flex-col hover:-translate-y-1 active:translate-y-0 transition-all"
           variant="ghost"
-          onClick={() => {
-            router.push(
-              "https://drive.google.com/file/d/1BiKCF6xkLvEGw4FEpEYSIU-pZuRnL6ne/view"
-              // "/874782/launcher/FroggSMP Launcher.exe"
-            );
-          }}
+          asChild
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/frogg-logo.png"
-            alt="Logo da Frogg"
-            className="w-48 pointer-events-none"
-          />
-          <span className="flex gap-2 items-center text-base">
-            <Download size="1rem" /> Versão padrão
-          </span>
+          <a
+            href="https://drive.google.com/file/d/1BiKCF6xkLvEGw4FEpEYSIU-pZuRnL6ne/view"
+            target="_blank"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/frogg-logo.png"
+              alt="Logo da Frogg"
+              className="w-48 pointer-events-none"
+            />
+            <span className="flex gap-2 items-center text-base">
+              <Download size="1rem" /> Versão padrão
+            </span>
+          </a>
         </Button>
-        <Popover>
-          <PopoverTrigger asChild>
-            <Button
-              className="h-auto py-4 bg-primary/10 !text-foreground flex flex-col hover:-translate-y-1 active:translate-y-0 transition-all"
-              variant="ghost"
+        <div className="relative">
+          <Button
+            className={cn(
+              "h-auto py-4 bg-primary/10 !text-foreground flex flex-col transition-all hover:-translate-y-1 active:translate-y-0",
+              !admin ? "pointer-events-none opacity-30" : undefined
+            )}
+            variant="ghost"
+            asChild
+          >
+            <a
+              href={
+                admin
+                  ? "https://drive.google.com/file/d/14-cvPW2fhY9RbEmhxnxiCpqokhGOy3iH/view"
+                  : "#"
+              }
+              target="_blank"
             >
               <div className="relative">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -64,29 +73,17 @@ export default function Launcher() {
               <span className="flex gap-2 items-center text-base">
                 <Download size="1rem" /> Versão admin
               </span>
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent className="dark border-0 flex flex-col w-auto">
-            <label htmlFor="password">Senha</label>
-            <input
-              className="w-32 h-8 border-primary/40 border bg-transparent rounded-sm outline-none focus-within:border-primary/80 focus-within:border-2 px-2 tracking-[0.4em] text-center"
-              id="password"
-              value={password}
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" && password.trim() === "423085") {
-                  router.push(
-                    "https://drive.google.com/file/d/14-cvPW2fhY9RbEmhxnxiCpqokhGOy3iH/view"
-                    // "/874782/launcher/423085/FroggSMP Launcher (Admin).exe"
-                  );
-                }
-              }}
-              autoFocus
-            />
-          </PopoverContent>
-        </Popover>
+            </a>
+          </Button>
+          {!admin && (
+            <div className="absolute inset-0 flex items-center justify-center rounded-md z-10 cursor-not-allowed">
+              <Lock
+                size="2rem"
+                className="text-foreground fill-foreground/80"
+              />
+            </div>
+          )}
+        </div>
       </div>
       <footer className="text-foreground mb-2 opacity-60">
         Ultima versão: v1.0
