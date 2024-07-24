@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/popover";
 import { Download, Shield } from "lucide-react";
 import { redirect, useRouter, useSearchParams } from "next/navigation";
+import { useState } from "react";
 
 export default function Launcher() {
   const searchParams = useSearchParams();
@@ -16,6 +17,7 @@ export default function Launcher() {
   }
 
   const router = useRouter();
+  const [password, setPassword] = useState("");
 
   return (
     <main className="dark bg-background h-screen w-screen flex flex-col justify-between items-center select-none">
@@ -69,8 +71,12 @@ export default function Launcher() {
             <input
               className="w-32 h-8 border-primary/40 border bg-transparent rounded-sm outline-none focus-within:border-primary/80 focus-within:border-2 px-2 tracking-[0.4em] text-center"
               id="password"
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
               onKeyDown={(e) => {
-                if (e.key == "Enter") {
+                if (e.key === "Enter" && password.trim() === "423085") {
                   router.push(
                     "https://drive.google.com/file/d/14-cvPW2fhY9RbEmhxnxiCpqokhGOy3iH/view"
                     // "/874782/launcher/423085/FroggSMP Launcher (Admin).exe"
