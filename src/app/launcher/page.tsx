@@ -24,7 +24,7 @@ export default async function Launcher(props: LauncherProps) {
     body: JSON.stringify({
       query: `
           query Releases {
-            releases(last: 2, orderBy: version_DESC) {
+            releases(last: 2, orderBy: version_ASC) {
               version
               downloadUrl
               admin
