@@ -330,7 +330,7 @@ export const STREAMERS: StreamerSchema[] = [
     characters: [
       {
         name: "Sunny",
-        wiki_url: "https://frogg-smp.fandom.com/pt-br/wiki/Sunny",
+        wiki_url: "https://frogg-smp.fandom.com/pt-br/wiki/Sunny_Seiki",
       },
     ],
   },
@@ -358,7 +358,7 @@ export const STREAMERS: StreamerSchema[] = [
     characters: [
       {
         name: "Yume",
-        wiki_url: "https://frogg-smp.fandom.com/pt-br/wiki/Yume",
+        wiki_url: "https://frogg-smp.fandom.com/pt-br/wiki/Yume_Matsu",
       },
     ],
   },
