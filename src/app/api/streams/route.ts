@@ -22,8 +22,9 @@ const STREAMERS = [
   "ljoga",
   "mynluvsx",
   "imrafly",
+  "ynasshi",
   "yuiboboca",
-  "yuyusaz"
+  "yuyusaz",
 ];
 
 type TwitchResponse = {

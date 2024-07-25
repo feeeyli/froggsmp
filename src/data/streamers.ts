@@ -320,13 +320,61 @@ export const STREAMERS: StreamerSchema[] = [
     ],
   },
   {
+    display_name: "Sunny",
+    avatar_url:
+      "https://yt3.googleusercontent.com/uj7s3Wz7trL1KYwEQnKKSa_suMlhPvgA7pq-DqKlxTjveJvzUQgygxY1PBpEad8RO0Y8JuizMZY=s160-c-k-c0x00ffffff-no-rj",
+    minecraft_uuid: "c7e24d78-1dac-41e8-a1ae-4cedaa838a59",
+    twitch_login: "sunnyseiki",
+    twitter_login: "SunnySeiki",
+    youtube_login: "SunnySeiki",
+    characters: [
+      {
+        name: "Sunny",
+        wiki_url: "https://frogg-smp.fandom.com/pt-br/wiki/Sunny",
+      },
+    ],
+  },
+  {
+    display_name: "Ynasshi",
+    avatar_url: "https://static-cdn.jtvnw.net/jtv_user_pictures/afb910c9-5c7b-4233-a693-83751fa4462a-profile_image-300x300.png",
+    minecraft_uuid: "43d93449-4982-472a-9743-0f55bb2a2ec4",
+    twitch_login: "ynasshi",
+    twitter_login: "YnasshiTV",
+    youtube_login: "ynasshi",
+    characters: [
+      {
+        name: "Ynasshi",
+        wiki_url: "https://frogg-smp.fandom.com/pt-br/wiki/Ynasshi",
+      },
+    ],
+  },
+  {
+    display_name: "YumeMatsu",
+    avatar_url: "https://yt3.googleusercontent.com/FUTb44veLJNGdQEMBKW9usJA3jf8akiYh04wjuxO4mmH0j45Q0uISUnQ2Vs9ihx8M9Rr64cY8Q=s160-c-k-c0x00ffffff-no-rj",
+    minecraft_uuid: "8abf5ea6-335c-487d-ad90-d2a3f5bb0492",
+    twitch_login: "yumematsu",
+    twitter_login: "YumeMatsu1",
+    youtube_login: "YumeMatsu",
+    characters: [
+      {
+        name: "Yume",
+        wiki_url: "https://frogg-smp.fandom.com/pt-br/wiki/Yume",
+      },
+    ],
+  },
+  {
     display_name: "Yui",
     avatar_url: "https://static-cdn.jtvnw.net/jtv_user_pictures/dd054b79-a741-484f-be2c-5ad2f0247c66-profile_image-300x300.png",
     minecraft_uuid: "6f1dca58-669d-4623-950f-7f38308223af",
     twitch_login: "yuiboboca",
     twitter_login: "yuiboboca",
     youtube_login: "yuiboboca",
-    characters: [],
+    characters: [
+      {
+        name: "Yui",
+        wiki_url: "https://frogg-smp.fandom.com/pt-br/wiki/Yui",
+      },
+    ],
   },
   {
     display_name: "Yumi",
